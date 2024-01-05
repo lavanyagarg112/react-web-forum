@@ -42,3 +42,7 @@ It will ask if you want to open the react app on another port. type y
 This opens the app on localhost:3001
 
 Interact with the app on localhost:3001 while keeping localhost:3000 open for backend.
+
+## Deployment
+
+When deployed, change the fetch link under Signup page accordingly, as well as the routes in routes.rb of rails if needed.

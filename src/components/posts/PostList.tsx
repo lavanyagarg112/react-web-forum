@@ -20,9 +20,7 @@ const PostList = ({allposts}: PostListProps) => {
             {allposts.map((post: Post) => 
                 <PostItem 
                     key={post.id} 
-                    id={post.id}
-                    title={post.title}
-                    description={post.description}
+                    postData = {post}
                 /> 
             )}
         </ul>

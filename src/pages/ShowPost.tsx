@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { usePost } from '../store/post-context';
 
-const ShowPost = () => {
+const ShowPost: React.FC = () => {
+  const { post } = usePost();
+
+  if (!post) {
+    return <div>No post selected</div>;
+  }
+
   return (
     <section>
-      Show Post
+      <h1>{post.title}</h1>
+      <p>{post.description}</p>
     </section>
-  )
-}
+  );
+};
 
-export default ShowPost
+export default ShowPost;

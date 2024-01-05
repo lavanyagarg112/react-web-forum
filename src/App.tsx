@@ -2,8 +2,10 @@ import React from 'react';
 import './App.css';
 
 import Layout from './components/layouts/Layout';
+import { PostProvider } from './store/post-context';
 
 import { Route, Routes } from 'react-router-dom';
+
 
 import AllPosts from './pages/AllPosts';
 import Categories from './pages/Categories';
@@ -16,15 +18,17 @@ import Signup from './pages/SignUp';
 function App() {
   return (
     <Layout>
-      <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/' element={<AllPosts />} />
-          <Route path='/showpost' element={<ShowPost />} />
-          <Route path='/newpost' element={<NewPost />} />
-          <Route path='/categories' element={<Categories />} />
-          <Route path='/favourites' element={<Favourites />} />
-      </Routes>
+      <PostProvider>
+        <Routes>
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/' element={<AllPosts />} />
+            <Route path='/showpost/:id' element={<ShowPost />} />
+            <Route path='/newpost' element={<NewPost />} />
+            <Route path='/categories' element={<Categories />} />
+            <Route path='/favourites' element={<Favourites />} />
+        </Routes>
+      </PostProvider>
     </Layout>
 
   );

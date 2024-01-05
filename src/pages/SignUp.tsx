@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import classes from '../components/posts/NewPostForm.module.css'
 import { useNavigate } from 'react-router-dom';
 
+import Card from '../components/ui/Card';
 
 const Signup: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -60,56 +61,55 @@ const Signup: React.FC = () => {
 
 
   return (
-    <form onSubmit={handleSubmit} className={classes.form}>
-      <div className={classes.control}>
-        <label>Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
-            required
-          />
-      </div>
-
-      <div className={classes.control}>
-        <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-      </div>
-
-      <div className={classes.control}>
-        <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-      </div>
-
-      <div className={classes.control}>
-      <label>Confirm Password</label>
-        <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="Confirm Password"
-            required
-            />
-
-      </div>
-
-      <button type="submit">Sign Up</button>
-      {signUpError && <div style={{ color: 'red' }}>{signUpError}</div>}
-
-    </form>
+    <section>
+        <h1>Sign Up</h1>
+        <Card>
+            <form onSubmit={handleSubmit} className={classes.form}>
+              <div className={classes.control}>
+                <label>Username</label>
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Username"
+                    required
+                  />
+              </div>
+              <div className={classes.control}>
+                <label>Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                    required
+                  />
+              </div>
+              <div className={classes.control}>
+                <label>Password</label>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    required
+                  />
+              </div>
+              <div className={classes.control}>
+              <label>Confirm Password</label>
+                <input
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Confirm Password"
+                    required
+                    />
+              </div>
+              <button type="submit">Sign Up</button>
+              {signUpError && <div style={{ color: 'red' }}>{signUpError}</div>}
+            </form>
+        </Card>
+    </section>
   );
 };
 

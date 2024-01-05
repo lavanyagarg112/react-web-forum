@@ -28,7 +28,7 @@ const MainNavigation = () => {
                     </li>
 
                     <li>
-                        <Link to="/login">Login</Link>
+                        <Link to="/signup">Signup</Link>
                     </li>
 
                 </ul>

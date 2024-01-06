@@ -46,3 +46,22 @@ Interact with the app on localhost:3001 while keeping localhost:3000 open for ba
 ## Deployment
 
 When deployed, change the fetch link under Signup page accordingly, as well as the routes in routes.rb of rails if needed.
+Even for logged in ig.
+
+## To add
+
+(In order: )
+
+User Profile: replace logout with user profile to add author name after sign up compulsorily
+
+Add tags and display name to post
+
+Save Post and show on screen
+
+Add comments
+
+Add Favourites
+
+Add Search Functionality for Posts
+
+Add Search Functionality for Users

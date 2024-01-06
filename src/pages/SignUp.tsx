@@ -46,7 +46,7 @@ const Signup: React.FC = () => {
     }
 
     const data = await response.json();
-    navigate('/'); 
+    navigate('/login'); 
 
   } catch (error) {
     if (error instanceof Error) {

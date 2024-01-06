@@ -14,22 +14,27 @@ import Login from './pages/LogIn';
 import NewPost from './pages/NewPost';
 import ShowPost from './pages/ShowPost';
 import Signup from './pages/SignUp';
+import LogOut from './pages/LogOut';
+import { AuthProvider } from './store/auth-context';
 
 function App() {
   return (
-    <Layout>
-      <PostProvider>
-        <Routes>
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/' element={<AllPosts />} />
-            <Route path='/showpost/:id' element={<ShowPost />} />
-            <Route path='/newpost' element={<NewPost />} />
-            <Route path='/categories' element={<Categories />} />
-            <Route path='/favourites' element={<Favourites />} />
-        </Routes>
-      </PostProvider>
-    </Layout>
+    <AuthProvider>
+      <Layout>
+        <PostProvider>
+          <Routes>
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/' element={<AllPosts />} />
+              <Route path='/showpost/:id' element={<ShowPost />} />
+              <Route path='/newpost' element={<NewPost />} />
+              <Route path='/categories' element={<Categories />} />
+              <Route path='/favourites' element={<Favourites />} />
+              <Route path='/logout' element={<LogOut />} />
+          </Routes>
+        </PostProvider>
+      </Layout>
+    </AuthProvider>
 
   );
 }

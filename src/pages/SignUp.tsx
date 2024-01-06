@@ -3,6 +3,7 @@ import classes from '../components/posts/NewPostForm.module.css'
 import { useNavigate } from 'react-router-dom';
 
 import Card from '../components/ui/Card';
+import { Link } from 'react-router-dom';
 
 const Signup: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -105,9 +106,14 @@ const Signup: React.FC = () => {
                     required
                     />
               </div>
-              <button type="submit">Sign Up</button>
+              <div className={classes.actions}><button type="submit">Sign Up</button></div>
               {signUpError && <div style={{ color: 'red' }}>{signUpError}</div>}
             </form>
+            <div className={classes['login-button']}>
+              <button>
+                <Link to="/login">Already have an account? Log in</Link>
+              </button>
+            </div>
         </Card>
     </section>
   );

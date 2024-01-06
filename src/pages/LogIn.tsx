@@ -3,6 +3,7 @@ import classes from '../components/posts/NewPostForm.module.css'
 import { useNavigate } from 'react-router-dom';
 
 import Card from '../components/ui/Card';
+import { useAuth } from '../store/auth-context';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -10,6 +11,8 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [loginError, setLoginError] = useState<string>('');
   const navigate = useNavigate();
+
+  const { setIsLoggedIn } = useAuth(); 
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,6 +35,7 @@ const Login: React.FC = () => {
       const data = await response.json();
       if (response.ok) {
         // Login successful
+        setIsLoggedIn(true);
         navigate('/'); // Navigate to the home page after login
       } else {
         // Handle login failure

@@ -54,9 +54,7 @@ Even for logged in ig.
 
 (In order: )
 
-Add tags and display name (username if display name not set) to post
-
-Save Post and show on screen
+Add tags and display them
 
 Add comments
 

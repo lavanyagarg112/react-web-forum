@@ -15,6 +15,7 @@ import NewPost from './pages/NewPost';
 import ShowPost from './pages/ShowPost';
 import Signup from './pages/SignUp';
 import LogOut from './pages/LogOut';
+import UserDataForm from './pages/UserDataForm';
 import { AuthProvider } from './store/auth-context';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Route path='/categories' element={<Categories />} />
               <Route path='/favourites' element={<Favourites />} />
               <Route path='/logout' element={<LogOut />} />
+              <Route path="/user-data" element={<UserDataForm />} />
           </Routes>
         </PostProvider>
       </Layout>

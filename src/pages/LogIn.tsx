@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const [loginError, setLoginError] = useState<string>('');
   const navigate = useNavigate();
 
-  const { setIsLoggedIn } = useAuth(); 
+  const { setIsLoggedIn, setUser  } = useAuth(); 
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,7 +36,8 @@ const Login: React.FC = () => {
       if (response.ok) {
         // Login successful
         setIsLoggedIn(true);
-        navigate('/'); // Navigate to the home page after login
+        setUser(data.user);
+        navigate('/user-data'); // Navigate to the home page after login
       } else {
         // Handle login failure
         setLoginError(data.error || 'Invalid credentials');

@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import classes from './MainNavigation.module.css';
 import { useAuth } from '../../store/auth-context';
 
+
 const MainNavigation = () => {
 const auth = useAuth();
 let message = ""
@@ -15,8 +16,8 @@ let link = "/"
     link = "/signup"
     console.log('not signed in')
   } else {
-    message = "Log Out"
-    link = "/logout"
+    message = "My Profile"
+    link = "/user-data"
   }
 
   return (

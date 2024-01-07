@@ -4,6 +4,9 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 interface AuthContextType {
   isLoggedIn: boolean;
   setIsLoggedIn: (isLoggedIn: boolean) => void; // Add this line
+  user: { id: number; email: string; username: string } | null;
+  setUser: (user: { id: number; email: string; username: string } | null) => void; 
+
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -22,6 +25,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState<{ id: number; email: string; username: string } | null>(null);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -31,6 +35,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         });
         const data = await response.json();
         setIsLoggedIn(data.logged_in);
+        if (data.logged_in) {
+            // Set user details if logged in
+            setUser(data.user);
+        } else {
+            setUser(null);
+        }
       } catch (error) {
         console.error("Failed to check login status:", error);
       }
@@ -39,8 +49,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     checkLoggedIn();
   }, []);
 
-  const value = { isLoggedIn, setIsLoggedIn }; 
-//   console.log(isLoggedIn)
+  const value = { isLoggedIn, setIsLoggedIn, user, setUser };
+  console.log(isLoggedIn)
   return (
     <AuthContext.Provider value={value}>
       {children}

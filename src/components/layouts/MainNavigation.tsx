@@ -17,7 +17,7 @@ let link = "/"
     console.log('not signed in')
   } else {
     message = "My Profile"
-    link = "/logout"
+    link = "/user-data"
   }
 
   return (

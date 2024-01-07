@@ -1,5 +1,5 @@
 import React, { useState, FormEvent } from 'react';
-import LogoutButton from '../components/LogoutButton';
+import LogoutButton from './LogoutButton';
 
 import { useEffect } from 'react';
 import { useAuth } from '../store/auth-context';
@@ -71,9 +71,6 @@ const UserDataForm = () => {
         <input type="text" value={authorname} onChange={(e) => setAuthorname(e.target.value)} />
       </div>
       <button type="submit">Save</button>
-      <div>
-        <LogoutButton />
-      </div>
     </form>
 
 

@@ -52,9 +52,7 @@ Even for logged in ig.
 
 (In order: )
 
-User Profile: replace logout with user profile to add author name after sign up compulsorily
-
-Add tags and display name to post
+Add tags and display name (username if display name not set) to post
 
 Save Post and show on screen
 

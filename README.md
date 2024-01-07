@@ -10,6 +10,8 @@ User Authentication: Secure sign-in functionality with Devise for enhanced secur
 
 CRUD Operations: Users can create, read, update, and delete posts and comments, using intuitive interfaces for seamless navigation and content management.
 
+User Profile: Manage display name and logout
+
 ## Technology Stack
 
 Backend: Ruby on Rails

@@ -1,21 +1,34 @@
-import React from 'react'
-import PostList from '../components/posts/PostList'
-
-const DUMMY_DATA = [
-    {
-        id: 1,
-        title: "hi",
-        description: "my first post"
-    }
-]
+import React, { useState, useEffect } from 'react';
+import PostList from '../components/posts/PostList';
 
 const AllPosts = () => {
-  return (
-    <section>
-      <h1>AllPosts</h1>
-      <PostList allposts = {DUMMY_DATA} />    
-    </section>
-  )
-}
+    const [posts, setPosts] = useState([]);
 
-export default AllPosts
+    useEffect(() => {
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/posts');
+                if (!response.ok) {
+                    throw new Error('Something went wrong!');
+                }
+                const data = await response.json();
+                setPosts(data);
+            } catch (error) {
+                console.error(error);
+                // Handle error here, e.g., set error state
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
+    return (
+        <section>
+            <h1>All Posts</h1>
+            <PostList allposts={posts} />
+        </section>
+    );
+};
+
+export default AllPosts;

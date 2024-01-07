@@ -30,7 +30,7 @@ const UserDataForm = () => {
 
         fetchCurrentDisplayName();
     }
-  }, []);
+  }, [isLoggedIn]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

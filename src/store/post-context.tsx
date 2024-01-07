@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 // Define the structure of the post object
-interface Post {
+interface Post {  
   id: number;
+  author_name: string;
   title: string;
   description: string;
   // Add more fields as necessary

@@ -6,12 +6,14 @@ import PostItem from './PostItem'
 type Post = {
     id: number,
     title: string,
+    author_name: string,
     description: string
 }
 
 type PostListProps = {
     allposts: Post[];
   };
+
   
 
 const PostList = ({allposts}: PostListProps) => {

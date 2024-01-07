@@ -11,6 +11,7 @@ type Props = {
     postData: {
         id: number,
         title: string,
+        author_name: string,
         description: string
     }
 }
@@ -22,6 +23,7 @@ const PostItem = ({postData}: Props) => {
     <Card>
         <div className={classes.content}>
             <h3>{postData.title}</h3>
+            <p>Author: {postData.author_name}</p>
             <p> <Link to ={`/showpost/${postData.id}`} onClick={() => setPost(postData)}> View Post </Link> </p>
         </div>
     </Card>

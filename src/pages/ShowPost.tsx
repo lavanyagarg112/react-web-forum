@@ -11,6 +11,7 @@ const ShowPost: React.FC = () => {
   return (
     <section>
       <h1>{post.title}</h1>
+      <p>Written by: {post.author_name}</p>
       <p>{post.description}</p>
     </section>
   );

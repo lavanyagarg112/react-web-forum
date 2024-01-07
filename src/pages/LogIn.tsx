@@ -37,7 +37,7 @@ const Login: React.FC = () => {
         // Login successful
         setIsLoggedIn(true);
         setUser(data.user);
-        navigate('/user-data'); // Navigate to the home page after login
+        navigate('/'); // Navigate to the home page after login
       } else {
         // Handle login failure
         setLoginError(data.error || 'Invalid credentials');

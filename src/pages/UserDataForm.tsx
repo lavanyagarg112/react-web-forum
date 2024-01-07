@@ -8,7 +8,7 @@ import { useAuth } from '../store/auth-context';
 const UserDataForm = () => {
   const [authorname, setAuthorname] = useState('');
   const { isLoggedIn, setIsLoggedIn} = useAuth();
-  const { user } = useAuth();
+    const { user } = useAuth();
     console.log("user data: "+ isLoggedIn)
   useEffect(() => {
     if (isLoggedIn){
@@ -30,7 +30,7 @@ const UserDataForm = () => {
 
         fetchCurrentDisplayName();
     }
-  }, [isLoggedIn]);
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

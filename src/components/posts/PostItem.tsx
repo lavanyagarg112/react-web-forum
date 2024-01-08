@@ -26,7 +26,7 @@ const PostItem = ({postData}: Props) => {
             <h3>{postData.title}</h3>
             <p>Author: {postData.author_name}</p>
             <div>
-                {postData.tags && postData.tags.map(tag => <span key={tag.id}>{tag.name}</span>)}
+                {postData.tags && postData.tags.map(tag => <span className={classes.showtag} key={tag.id}>{tag.name} </span>)}
             </div>
             <p> <Link to ={`/showpost/${postData.id}`} onClick={() => setPost(postData)}> View Post </Link> </p>
         </div>

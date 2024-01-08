@@ -54,11 +54,17 @@ Even for logged in ig.
 
 (In order: )
 
-Add tags and display them
+Restyle user profile and show page
+
+Strip from sides of display name to avoid blank name
 
 Add comments
 
+Add tags to categories to view by tags, and when we click on the tag also it redirects
+
 Add Favourites
+
+Add User Profile for others to see someone's profile with bio and stuff
 
 Add Search Functionality for Posts
 

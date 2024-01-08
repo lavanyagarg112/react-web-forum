@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+type TagType = {
+  id: number,
+  name: string;
+};
+
 type PostData = {
   id: number;
   title: string;
   author_name: string;
   description: string;
-  // include other properties as needed
+  tags: TagType[];
 };
 
 const ShowPost: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Make sure to get the id as a string
+  const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<PostData | null>(null);
 
   useEffect(() => {
@@ -21,6 +26,7 @@ const ShowPost: React.FC = () => {
           throw new Error('Failed to fetch post');
         }
         const data: PostData = await response.json();
+        console.log(data);
         setPost(data);
       } catch (error) {
         console.error("Failed to load post:", error);
@@ -28,7 +34,7 @@ const ShowPost: React.FC = () => {
     };
 
     fetchPost();
-  }, [id]); // The effect will re-run if the id changes
+  }, [id]);
 
   if (!post) {
     return <div>Loading post...</div>;
@@ -39,6 +45,16 @@ const ShowPost: React.FC = () => {
       <h1>{post.title}</h1>
       <p>Written By: {post.author_name}</p>
       <p>{post.description}</p>
+      <div>
+        <h3>Tags:</h3>
+        {post.tags && (
+          <ul>
+            {post.tags.map(tag => (
+              <li key={tag.id}>{tag.name}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </section>
   );
 };

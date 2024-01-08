@@ -12,7 +12,8 @@ type Props = {
         id: number,
         title: string,
         author_name: string,
-        description: string
+        description: string,
+        tags?: { id: number; name: string }[];
     }
 }
 
@@ -24,6 +25,9 @@ const PostItem = ({postData}: Props) => {
         <div className={classes.content}>
             <h3>{postData.title}</h3>
             <p>Author: {postData.author_name}</p>
+            <div>
+                {postData.tags && postData.tags.map(tag => <span key={tag.id}>{tag.name}</span>)}
+            </div>
             <p> <Link to ={`/showpost/${postData.id}`} onClick={() => setPost(postData)}> View Post </Link> </p>
         </div>
     </Card>

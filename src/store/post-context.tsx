@@ -6,6 +6,7 @@ interface Post {
   author_name: string;
   title: string;
   description: string;
+  tags?: {id:number, name: string }[];
   // Add more fields as necessary
 }
 

@@ -7,7 +7,8 @@ type Post = {
     id: number,
     title: string,
     author_name: string,
-    description: string
+    description: string,
+    tags?: { id: number; name: string }[];
 }
 
 type PostListProps = {

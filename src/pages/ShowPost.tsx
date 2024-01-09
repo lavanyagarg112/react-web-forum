@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import classes from "./ShowPost.module.css"
+
+import { useAuth } from '../store/auth-context';
 
 type TagType = {
   id: number,
@@ -19,6 +21,10 @@ type PostData = {
 const ShowPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<PostData | null>(null);
+  const [authorname, setAuthorname] = useState('');
+  const { isLoggedIn, setIsLoggedIn} = useAuth();
+  const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -38,6 +44,52 @@ const ShowPost: React.FC = () => {
     fetchPost();
   }, [id]);
 
+  useEffect(() => {
+    if (isLoggedIn){
+        // Fetch the current display name when the component mounts
+        const fetchCurrentDisplayName = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/current_user_data', {
+            credentials: 'include', // to include the authentication cookie
+            });
+            if (response.ok) {
+            const data = await response.json();
+            setAuthorname(data.authorname); // Assuming the attribute is named 'authorname'
+            }
+        } catch (error) {
+            console.error('Failed to fetch current display name:', error);
+            console.log(authorname)
+        }
+        };
+
+        fetchCurrentDisplayName();
+    }
+  }, [isLoggedIn]);
+
+  const deletePost = async (postId: number) => {
+    // Confirm before deleting
+    if(window.confirm('Are you sure you want to delete this post?')) {
+      try {
+        const response = await fetch(`http://localhost:3000/posts/${postId}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            // Include any necessary authentication headers, such as a bearer token
+          },
+        });
+
+        if (response.ok) {
+          console.log('Post deleted successfully');
+          navigate('/'); // Redirect to the homepage or the posts list
+        } else {
+          console.error('Failed to delete the post');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+  };
+
   if (!post) {
     return <div>No Post Found</div>;
   }
@@ -52,6 +104,9 @@ const ShowPost: React.FC = () => {
         )}
       </div>
       <p className={classes.showPostDescription}>{post.description}</p>
+      {user && authorname === post.author_name && (
+        <button onClick={() => deletePost(post.id)}>Delete Post</button>
+      )}
     </div>
   );
 };

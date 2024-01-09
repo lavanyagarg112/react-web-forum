@@ -22,8 +22,6 @@ const NewPostForm = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
 
-    let finalname = ''
-
     useEffect(() => {
 
         const fetchTags = async () => {
@@ -64,10 +62,6 @@ const NewPostForm = () => {
 
       }, []);
 
-      finalname = authorname
-      if (!authorname && user?.username){
-        finalname = user?.username
-    }
 
     const submitHandler = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -116,7 +110,7 @@ const NewPostForm = () => {
 
             <form className={classes.form} onSubmit={submitHandler}>
 
-                <p>Display Name: {finalname}</p>
+                <p>Display Name: {authorname}</p>
 
                 <div className={classes.control}>
                     <label htmlFor="title">Post Title</label>

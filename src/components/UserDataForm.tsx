@@ -22,7 +22,9 @@ const UserDataForm = () => {
             });
             if (response.ok) {
             const data = await response.json();
-            setAuthorname(data.authorname); // Assuming the attribute is named 'authorname'
+              setAuthorname(data.authorname); 
+
+            console.log(authorname)
             }
         } catch (error) {
             console.error('Failed to fetch current display name:', error);

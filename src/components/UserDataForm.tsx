@@ -38,6 +38,9 @@ const UserDataForm = () => {
     event.preventDefault();
     // Make API call to backend to save UserData
     // Adjust the URL and request method (POST for create, PUT for update) accordingly
+
+    const trimmedAuthorName = authorname ? authorname.trim() : (user && user.username);
+
     try {
         const response = await fetch('http://localhost:3000/user_datum', {
         method: 'POST',
@@ -45,7 +48,7 @@ const UserDataForm = () => {
             'Content-Type': 'application/json',
             // Include authentication headers if needed
         },
-        body: JSON.stringify({ user_data: {authorname} }),
+        body: JSON.stringify({ user_data: {authorname: trimmedAuthorName} }),
         credentials: 'include',
         });
 
@@ -75,7 +78,7 @@ const UserDataForm = () => {
 
           <div className={classes.profileControl}>
             <label>Display Name</label>
-            <input type="text" value={authorname} onChange={(e) => setAuthorname(e.target.value)} />
+            <input type="text" value={authorname || ''}  onChange={(e) => setAuthorname(e.target.value)} />
           </div>
           <div className={classes.profileActions}>
             <button type="submit" className={classes.profileButton}>Save</button>

@@ -67,6 +67,8 @@ Add Favourites
 
 Add User Profile for others to see someone's profile with bio and stuff
 
+Forgot Password
+
 Add Search Functionality for Posts
 
 Add Search Functionality for Users

@@ -1,0 +1,11 @@
+.showtag {
+    display: inline-block;
+    padding: 5px 10px; /* Adjust the padding to your preference */
+    margin: 2px; /* Space between tags */
+    background-color: #f0f0f0; /* Light grey background */
+    border: 1px solid #dcdcdc; /* Slightly darker border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 0.875em; /* Smaller font size for tags */
+    color: #333; /* Dark text color */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+  }

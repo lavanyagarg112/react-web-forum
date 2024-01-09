@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import classes from "./ShowPost.module.css"
+
 type TagType = {
   id: number,
   name: string;
@@ -44,17 +46,11 @@ const ShowPost: React.FC = () => {
     <section>
       <h1>{post.title}</h1>
       <p>Written By: {post.author_name}</p>
+      <div> Tags: 
+            {post.tags && post.tags.map(tag => <span className={classes.showtag} key={tag.id}> {tag.name} </span>)}
+            </div>
+
       <p>{post.description}</p>
-      <div>
-        <h3>Tags:</h3>
-        {post.tags && (
-          <ul>
-            {post.tags.map(tag => (
-              <li key={tag.id}>{tag.name}</li>
-            ))}
-          </ul>
-        )}
-      </div>
     </section>
   );
 };

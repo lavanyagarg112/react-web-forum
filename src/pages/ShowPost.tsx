@@ -8,6 +8,7 @@ import { useAuth } from '../store/auth-context';
 import DeletePost from '../components/posts/DeletePost';
 import { Link } from 'react-router-dom';
 
+
 type TagType = {
   id: number,
   name: string;
@@ -69,6 +70,10 @@ const ShowPost: React.FC = () => {
     }
   }, [isLoggedIn]);
 
+  const editPostHandler = () => {
+    navigate(`/editpost/${id}`)
+  }
+
   
 
   if (!post) {
@@ -84,13 +89,21 @@ const ShowPost: React.FC = () => {
           <span className={classes.showPostTag} key={tag.id}> {tag.name} </span>
         )}
       </div>
-      <p className={classes.showPostDescription}>{post.description}</p>
-      {user && authorname === post.author_name && (
-        <DeletePost id = {post.id} />
-      )}
-      {user && authorname === post.author_name && (
-        <Link to={`/editpost/${id}`}>Edit Post</Link>
-      )}
+      <div className={classes.postcontainer}>
+        <p className={classes.showPostDescription}>{post.description}</p>
+      </div>
+
+      <div className={classes.actionsdiv}>
+        {user && authorname === post.author_name && (
+          <div className={classes.editPostButton}>
+            <Link to={`/editpost/${id}`} className={classes.linkbutton}>Edit Post</Link>
+          </div>
+        
+        )}
+        {user && authorname === post.author_name && (
+          <DeletePost id = {post.id} />
+        )}
+      </div>
     </div>
   );
 };

@@ -45,6 +45,28 @@
     color: #333;
     white-space: pre-wrap; /* Ensures that line breaks and spaces are respected */
   }
+
+  .actionsdiv {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+  }
+
+  .editPostButton {
+    margin-top: 1rem;
+    text-align: right;
+  }
+
+  .linkbutton {
+    color: #77002e;
+  }
+
+  .postcontainer {
+    padding: 20px;
+    padding-left: 0px;
+  }
+
+
   
   /* Add more styles as needed */
   

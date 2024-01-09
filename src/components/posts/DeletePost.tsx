@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import classes from "./NewPostForm.module.css"
+import classes from "./DeletePost.module.css"
 
 const DeletePost = ({id}: {id: number}) => {
     const navigate = useNavigate();
@@ -33,7 +33,7 @@ const DeletePost = ({id}: {id: number}) => {
 
   
     return (
-        <div className={classes.actions}><button onClick={() => deletePosthandler(id)}>Delete Post</button></div>
+        <p className={classes.linkstyle} onClick={() => deletePosthandler(id)}>Delete Post</p>
     )
   }
 export default DeletePost

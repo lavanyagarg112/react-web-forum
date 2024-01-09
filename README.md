@@ -56,7 +56,6 @@ Even for logged in ig.
 
 (In order: )
 
-Delete Posts
 
 Edit Posts (with tags preferably)
 

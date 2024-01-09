@@ -62,9 +62,11 @@ Add tags to categories to view by tags, and when we click on the tag also it red
 
 Add Favourites
 
+Forgot Password
+
 Add User Profile for others to see someone's profile with bio and stuff
 
-Forgot Password
+Make responsive
 
 Add Search Functionality for Posts
 

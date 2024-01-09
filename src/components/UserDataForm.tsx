@@ -80,7 +80,7 @@ const UserDataForm = () => {
 
           <div className={classes.profileControl}>
             <label>Display Name</label>
-            <input type="text" value={authorname || ''}  onChange={(e) => setAuthorname(e.target.value)} />
+            <input type="text" value={authorname}  onChange={(e) => setAuthorname(e.target.value)} />
           </div>
           <div className={classes.profileActions}>
             <button type="submit" className={classes.profileButton}>Save</button>

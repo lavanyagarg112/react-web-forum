@@ -75,3 +75,5 @@ Make responsive
 Add Search Functionality for Posts
 
 Add Search Functionality for Users
+
+If we ask to login how to go back to the page we were asked to login from (for eg from favourites/ editpost etc)

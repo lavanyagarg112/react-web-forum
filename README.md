@@ -58,6 +58,10 @@ Even for logged in ig.
 
 Strip from sides of display name to avoid blank name
 
+Edit Posts (with tags preferably)
+
+Delete Posts
+
 Add comments
 
 Add tags to categories to view by tags, and when we click on the tag also it redirects

@@ -4,6 +4,8 @@ import LogoutButton from './LogoutButton';
 import { useEffect } from 'react';
 import { useAuth } from '../store/auth-context';
 
+import classes from "./UserDataForm.module.css"
+
 
 const UserDataForm = () => {
   const [authorname, setAuthorname] = useState('');
@@ -62,16 +64,26 @@ const UserDataForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    
       <div>
+      <h1 className={classes.profileHeader}>Your Profile</h1>
         {user && <p>Username: {user.username}</p>}
-        <p>If no display name is set, then your posts/comments will be published only under your username</p>
+        <p className={classes.profileInfo}>If no display name is set, then your posts/comments will be published only under your username</p>
         <p>Display Name: {authorname}</p>
-        <label>Display Name</label>
-        <input type="text" value={authorname} onChange={(e) => setAuthorname(e.target.value)} />
+
+        <form onSubmit={handleSubmit} className={classes.profileForm}>
+
+          <div className={classes.profileControl}>
+            <label>Display Name</label>
+            <input type="text" value={authorname} onChange={(e) => setAuthorname(e.target.value)} />
+          </div>
+          <div className={classes.profileActions}>
+            <button type="submit" className={classes.profileButton}>Save</button>
+          </div>
+      
+        </form>
+
       </div>
-      <button type="submit">Save</button>
-    </form>
 
 
   );

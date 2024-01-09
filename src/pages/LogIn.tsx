@@ -83,7 +83,7 @@ const Login: React.FC = () => {
                   />
               </div>
 
-              <button type="submit">Login</button>
+              <div className={classes.actions}><button type="submit">Login</button></div>
               {loginError && <div style={{ color: 'red' }}>{loginError}</div>}
 
             </form>

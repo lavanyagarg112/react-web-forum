@@ -12,6 +12,8 @@ CRUD Operations: Users can create, read, update, and delete posts and comments, 
 
 User Profile: Manage display name and logout
 
+Tags: Users and reuse or add new tags, to further personalise the posts
+
 ## Technology Stack
 
 Backend: Ruby on Rails
@@ -53,8 +55,6 @@ Even for logged in ig.
 ## To add
 
 (In order: )
-
-Restyle user profile and show page
 
 Strip from sides of display name to avoid blank name
 

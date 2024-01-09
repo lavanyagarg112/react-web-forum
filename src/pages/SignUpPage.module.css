@@ -1,0 +1,25 @@
+.content {
+    padding: 1rem;
+  }
+
+  .loginprompt {
+    text-align: center;
+    margin-top: 1rem;
+   
+  }
+  
+  .loginlink {
+    color: #77002e;
+    text-decoration: underline;
+    font-weight: normal;
+    padding-top: 1rem;
+    display: block;
+    
+  }
+  
+  .loginlink:hover,
+  .loginlink:focus {
+    text-decoration: none; /* Remove underline on hover/focus for a clean look */
+    color: #a50e48; /* Slightly darker for interaction feedback */
+  }
+  

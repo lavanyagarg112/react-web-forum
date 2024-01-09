@@ -39,19 +39,20 @@ const ShowPost: React.FC = () => {
   }, [id]);
 
   if (!post) {
-    return <div>Loading post...</div>;
+    return <div>No Post Found</div>;
   }
 
   return (
-    <section>
-      <h1>{post.title}</h1>
-      <p>Written By: {post.author_name}</p>
-      <div> Tags: 
-            {post.tags && post.tags.map(tag => <span className={classes.showtag} key={tag.id}> {tag.name} </span>)}
-            </div>
-
-      <p>{post.description}</p>
-    </section>
+    <div className={classes.showPostContainer}>
+      <h1 className={classes.showPostHeader}>{post.title}</h1>
+      <p className={classes.showPostAuthor}>Written By: {post.author_name}</p>
+      <div className={classes.showPostTags}>
+        {post.tags && post.tags.map(tag => 
+          <span className={classes.showPostTag} key={tag.id}> {tag.name} </span>
+        )}
+      </div>
+      <p className={classes.showPostDescription}>{post.description}</p>
+    </div>
   );
 };
 

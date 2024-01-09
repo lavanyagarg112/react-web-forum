@@ -19,14 +19,14 @@ type PostListProps = {
 
 const PostList = ({allposts}: PostListProps) => {
   return (
-    <ul className={classes.list}>
-            {allposts.map((post: Post) => 
+    <div className={classes.grid}>
+            {allposts.reverse().map((post: Post) => 
                 <PostItem 
                     key={post.id} 
                     postData = {post}
                 /> 
             )}
-        </ul>
+        </div>
   )
 }
 

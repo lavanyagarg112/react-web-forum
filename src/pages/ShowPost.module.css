@@ -1,11 +1,50 @@
-.showtag {
-    display: inline-block;
-    padding: 5px 10px; /* Adjust the padding to your preference */
-    margin: 2px; /* Space between tags */
-    background-color: #f0f0f0; /* Light grey background */
-    border: 1px solid #dcdcdc; /* Slightly darker border */
-    border-radius: 15px; /* Rounded corners */
-    font-size: 0.875em; /* Smaller font size for tags */
-    color: #333; /* Dark text color */
-    cursor: pointer; /* Cursor changes to pointer on hover */
+/* ShowPost.module.css */
+
+.showPostContainer {
+    max-width: 800px; /* Adjust the width as needed */
+    margin: auto;
+    padding: 20px;
+    background: #fff; /* Assuming a light theme for the card */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    border-radius: 6px; /* Slight rounding on corners */
+    margin-top: 2rem;
   }
+  
+  .showPostHeader {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem; /* Space below the header */
+  }
+  
+  .showPostAuthor {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem; /* Space below the author line */
+  }
+  
+  .showPostTags {
+    margin-bottom: 1rem; /* Space below the tags */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .showPostTag {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .showPostDescription {
+    font-size: 1rem;
+    color: #333;
+    white-space: pre-wrap; /* Ensures that line breaks and spaces are respected */
+  }
+  
+  /* Add more styles as needed */
+  

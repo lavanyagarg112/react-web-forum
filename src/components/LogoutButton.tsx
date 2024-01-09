@@ -3,6 +3,8 @@ import React from 'react';
 import { useAuth } from '../store/auth-context';
 import { useNavigate } from 'react-router-dom';
 
+import classes from "./UserDataForm.module.css"
+
 const LogoutButton = () => {
   const { setIsLoggedIn, setUser } = useAuth();
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <button onClick={handleLogout}>Logout</button>
+    <button onClick={handleLogout} className={classes.profileButton}>Logout</button>
   );
 };
 

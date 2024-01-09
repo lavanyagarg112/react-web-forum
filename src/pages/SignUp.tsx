@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import classes from '../components/posts/NewPostForm.module.css'
+import signupclasses from "./SignUpPage.module.css"
 import { useNavigate } from 'react-router-dom';
 
 import Card from '../components/ui/Card';
@@ -65,54 +66,54 @@ const Signup: React.FC = () => {
     <section>
         <h1>Sign Up</h1>
         <Card>
-            <form onSubmit={handleSubmit} className={classes.form}>
-              <div className={classes.control}>
-                <label>Username</label>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Username"
-                    required
-                  />
-              </div>
-              <div className={classes.control}>
-                <label>Email</label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    required
-                  />
-              </div>
-              <div className={classes.control}>
-                <label>Password</label>
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                    required
-                  />
-              </div>
-              <div className={classes.control}>
-              <label>Confirm Password</label>
-                <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    placeholder="Confirm Password"
-                    required
+            <div className={signupclasses.content}>
+              <form onSubmit={handleSubmit} className={classes.form}>
+                <div className={classes.control}>
+                  <label>Username</label>
+                    <input
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="Username"
+                      required
                     />
+                </div>
+                <div className={classes.control}>
+                  <label>Email</label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email"
+                      required
+                    />
+                </div>
+                <div className={classes.control}>
+                  <label>Password</label>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                      required
+                    />
+                </div>
+                <div className={classes.control}>
+                <label>Confirm Password</label>
+                  <input
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      placeholder="Confirm Password"
+                      required
+                      />
+                </div>
+                <div className={classes.actions}><button type="submit">Sign Up</button></div>
+                {signUpError && <div style={{ color: 'red' }}>{signUpError}</div>}
+              </form>
+              <div className={signupclasses.loginprompt}>
+                  <Link to="/login" className={signupclasses.loginlink}>Already have an account? Log in</Link>
               </div>
-              <div className={classes.actions}><button type="submit">Sign Up</button></div>
-              {signUpError && <div style={{ color: 'red' }}>{signUpError}</div>}
-            </form>
-            <div className={classes['login-button']}>
-              <button>
-                <Link to="/login">Already have an account? Log in</Link>
-              </button>
             </div>
         </Card>
     </section>

@@ -64,6 +64,10 @@ Add Favourites
 
 Forgot Password
 
+Upvote/ Downvote post
+
+Upvote/ Downvote comment
+
 Add User Profile for others to see someone's profile with bio and stuff
 
 Make responsive

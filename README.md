@@ -72,6 +72,8 @@ Add User Profile for others to see someone's profile with bio and stuff
 
 Make responsive
 
+How to make tags more restrictive so that it isnt spammed?
+
 Add Search Functionality for Posts
 
 Add Search Functionality for Users

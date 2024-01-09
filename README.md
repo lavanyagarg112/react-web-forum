@@ -56,11 +56,9 @@ Even for logged in ig.
 
 (In order: )
 
-Strip from sides of display name to avoid blank name
+Delete Posts
 
 Edit Posts (with tags preferably)
-
-Delete Posts
 
 Add comments
 

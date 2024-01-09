@@ -43,7 +43,7 @@ const UserDataForm = () => {
 
     try {
         const response = await fetch('http://localhost:3000/user_datum', {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             // Include authentication headers if needed

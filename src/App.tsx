@@ -17,6 +17,7 @@ import Signup from './pages/SignUp';
 import LogOut from './pages/LogOut';
 import UserDataPage from './pages/UserDataPage';
 import { AuthProvider } from './store/auth-context';
+import EditPost from './pages/EditPost';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path='/signup' element={<Signup />} />
               <Route path='/' element={<AllPosts />} />
               <Route path='/showpost/:id' element={<ShowPost />} />
+              <Route path='/editpost/:id' element={<EditPost />} />
               <Route path='/newpost' element={<NewPost />} />
               <Route path='/categories' element={<Categories />} />
               <Route path='/favourites' element={<Favourites />} />

@@ -129,8 +129,6 @@ const NewPostForm = () => {
                     classNamePrefix="select"
                     onChange={(selectedOptions) => setSelectedTags(selectedOptions as TagOption[])}
                     value={selectedTags}
-
-                    required
                 />
 
                 <div className={classes.actions}>

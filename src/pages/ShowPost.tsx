@@ -6,6 +6,7 @@ import classes from "./ShowPost.module.css"
 import { useAuth } from '../store/auth-context';
 
 import DeletePost from '../components/posts/DeletePost';
+import { Link } from 'react-router-dom';
 
 type TagType = {
   id: number,
@@ -86,6 +87,9 @@ const ShowPost: React.FC = () => {
       <p className={classes.showPostDescription}>{post.description}</p>
       {user && authorname === post.author_name && (
         <DeletePost id = {post.id} />
+      )}
+      {user && authorname === post.author_name && (
+        <Link to={`/editpost/${id}`}>Edit Post</Link>
       )}
     </div>
   );

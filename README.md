@@ -12,7 +12,7 @@ CRUD Operations: Users can create, read, update, and delete posts and comments, 
 
 User Profile: Manage display name and logout
 
-Tags: Users and reuse or add new tags, to further personalise the posts
+Tags: Users can reuse or add new tags, as well as edit them later, to further personalise the posts
 
 ## Technology Stack
 
@@ -55,9 +55,6 @@ Even for logged in ig.
 ## To add
 
 (In order: )
-
-
-Edit Posts (with tags preferably)
 
 Add comments
 

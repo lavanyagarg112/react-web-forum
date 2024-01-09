@@ -5,6 +5,8 @@ import classes from "./ShowPost.module.css"
 
 import { useAuth } from '../store/auth-context';
 
+import DeletePost from '../components/posts/DeletePost';
+
 type TagType = {
   id: number,
   name: string;
@@ -66,29 +68,7 @@ const ShowPost: React.FC = () => {
     }
   }, [isLoggedIn]);
 
-  const deletePost = async (postId: number) => {
-    // Confirm before deleting
-    if(window.confirm('Are you sure you want to delete this post?')) {
-      try {
-        const response = await fetch(`http://localhost:3000/posts/${postId}`, {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-            // Include any necessary authentication headers, such as a bearer token
-          },
-        });
-
-        if (response.ok) {
-          console.log('Post deleted successfully');
-          navigate('/'); // Redirect to the homepage or the posts list
-        } else {
-          console.error('Failed to delete the post');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
-  };
+  
 
   if (!post) {
     return <div>No Post Found</div>;
@@ -105,7 +85,7 @@ const ShowPost: React.FC = () => {
       </div>
       <p className={classes.showPostDescription}>{post.description}</p>
       {user && authorname === post.author_name && (
-        <button onClick={() => deletePost(post.id)}>Delete Post</button>
+        <DeletePost id = {post.id} />
       )}
     </div>
   );

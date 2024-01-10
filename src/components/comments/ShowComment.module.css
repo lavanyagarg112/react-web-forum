@@ -1,11 +1,63 @@
-.comment {
+/* .comment {
     margin-left: 0;
     padding-left: 0;
-    border-left: 1px solid #ddd; /* Optional: adds a visual line for clarity */
+    border-left: 1px solid #ddd;  Optional: adds a visual line for clarity 
+  } */
+  
+  /* .replies {
+    margin-left: 20px; 
+    padding-left: 10px;
+    border-left: 1px solid #ddd; 
+  }  */
+
+  .comment {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .comment .author {
+    font-weight: bold;
+  }
+  
+  .content {
+    margin-top: 5px;
   }
   
   .replies {
-    margin-left: 20px; /* Adjust as needed for the desired level of indentation */
-    padding-left: 10px;
-    border-left: 1px solid #ddd; /* Optional */
+    padding-left: 20px; /* Indent replies */
+    border-left: 2px solid #eee;
   }
+  
+  /* .comment .metadata {
+    font-size: 0.85em;
+    color: #666;
+  } */
+  
+  .comment:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+  /* .comment.author-comment {
+    border-color: #007bff;
+    background-color: #e9f5fe;
+  }
+   */
+
+  .comment button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .comment button:hover {
+    opacity: 0.8;
+  }
+
+  .buttonarea {
+    margin-bottom: 5px;
+  }
+  

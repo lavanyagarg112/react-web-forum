@@ -12,7 +12,7 @@
   
   .showPostHeader {
     font-size: 2rem;
-    text-align: center;
+    /* text-align: center; */
     color: #333;
     margin-bottom: 1rem; /* Space below the header */
   }

@@ -31,27 +31,18 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
     const {user} = useAuth()
     const [authorname, setAuthorname] = useState('');
     const { isLoggedIn, setIsLoggedIn} = useAuth();
+    const [showReplyForm, setShowReplyForm] = useState(false);
 
-    const [comments, setComments] = useState<CommentType[]>([]);
+    const [replytext, setreplytext] = useState('Reply');
 
-    const navigate = useNavigate();
-
-    console.log(comment.replies)
-
-    const fetchComments = async () => {
-        try {
-          const response = await fetch(`http://localhost:3000/posts/${comment.post_id}/comments`);
-          if (!response.ok) {
-            throw new Error('Failed to fetch comments');
-          }
-          const data = await response.json();
-          setComments(data);
-        } catch (error) {
-          console.error('Error fetching comments:', error);
+    const toggleReplyForm = () => {
+        setShowReplyForm(!showReplyForm);
+        if (!showReplyForm){
+            setreplytext('Cancel Reply')
+        } else {
+            setreplytext('Reply')
         }
       };
-    
-      
 
     useEffect(() => {
         if (isLoggedIn){
@@ -95,6 +86,7 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
     
           // Clear form and optionally refresh comments
           setReplyContent('');
+          toggleReplyForm()
           onReplyPosted()
         } catch (error) {
           console.error('Error posting reply:', error);
@@ -103,12 +95,17 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
 
       return (
         <div className={classes.comment}>
-          <p>{comment.author_name}: {comment.content}</p>
+          <p className={classes.author}>{comment.author_name}:</p>
+          <p>{comment.content}</p>
           {comment.author_name === authorname && <DeleteComment id = {comment.id} postId={comment.post_id} onCommentDeleted={onReplyPosted} /> }
+
+          {user && (
+                <div className={classes.buttonarea}><button onClick={toggleReplyForm}>{replytext}</button></div>
+            )}
           
-          {user && (<form onSubmit={handleReplySubmit}>
+          {showReplyForm && (<form onSubmit={handleReplySubmit}>
             <textarea value={replyContent} onChange={(e) => setReplyContent(e.target.value)} />
-            <button type="submit">Reply</button>
+            <div className={classes.buttonarea}><button type="submit">Reply</button></div>
           </form>)}
 
           <div className={classes.replies}>

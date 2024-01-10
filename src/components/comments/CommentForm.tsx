@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useEffect } from 'react';
 
+import classes from "./ShowComment.module.css"
+
 import React from 'react'
 
 const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () => void}) => {
@@ -16,6 +18,19 @@ const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () =>
 
     const [authorname, setAuthorname] = useState('');
     const { isLoggedIn, setIsLoggedIn} = useAuth();
+
+    const [showCommentForm, setShowCommentForm] = useState(false);
+
+    const [commenttext, setcommenttext] = useState('Add Comment');
+
+    const toggleCommentForm = () => {
+        setShowCommentForm(!showCommentForm);
+        if (!showCommentForm){
+            setcommenttext('Cancel Comment')
+        } else {
+            setcommenttext('Add Comment')
+        }
+      };
 
     useEffect(() => {
         if (isLoggedIn){
@@ -58,6 +73,7 @@ const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () =>
     
           // Clear form and optionally refresh comments
           setReplyContent('');
+          toggleCommentForm()
           onCommentPosted()
           
         } catch (error) {
@@ -65,10 +81,15 @@ const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () =>
         }
       };
   return (
-    <form onSubmit={handleReplySubmit}>
-            <textarea value={replyContent} onChange={(e) => setReplyContent(e.target.value)} />
-            <button type="submit">Comment</button>
-          </form>
+    <div className={classes.comment}>
+        {user && (
+                <div className={classes.buttonarea}><button onClick={toggleCommentForm}>{commenttext}</button></div>
+            )}
+        {showCommentForm && (<form onSubmit={handleReplySubmit}>
+                <textarea value={replyContent} onChange={(e) => setReplyContent(e.target.value)} />
+                <div><button type="submit">Add Comment</button></div>
+              </form>)}
+    </div>
   )
 }
 

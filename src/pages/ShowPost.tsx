@@ -113,8 +113,7 @@ const ShowPost: React.FC = () => {
   }
 
   return (
-    <section>
-      <div className={classes.showPostContainer}>
+    <div className={classes.showPostContainer}>
         <h1 className={classes.showPostHeader}>{post.title}</h1>
         <p className={classes.showPostAuthor}>Written By: {post.author_name}</p>
         <div className={classes.showPostTags}>
@@ -136,18 +135,17 @@ const ShowPost: React.FC = () => {
             <DeletePost id = {post.id} />
           )}
         </div>
+
+        <div className={classes.commentsSection}>
+          {!user && (
+            <p>Please <Link to="/login">log in</Link> to add comments and replies.</p>
+          )}
+          {user && <CommentForm id = {post.id} onCommentPosted={updateComments} />}
+          {comments && comments.reverse().map((comment) => (
+            <ShowComment key={comment.id} comment={comment} onReplyPosted={updateComments} />
+          ))}
+        </div>
       </div>
-     <div className={classes.commentsSection}>
-      {!user && (
-        <p>Please <Link to="/login">log in</Link> to add comments and replies.</p>
-      )}
-      {user && <CommentForm id = {post.id} onCommentPosted={updateComments} />}
-      {comments && comments.reverse().map((comment) => (
-        <ShowComment key={comment.id} comment={comment} onReplyPosted={updateComments} />
-      ))}
-    </div>
-    
-    </section>
   );
 };
 

@@ -138,14 +138,15 @@ const ShowPost: React.FC = () => {
         </div>
       </div>
      <div className={classes.commentsSection}>
+      {!user && (
+        <p>Please <Link to="/login">log in</Link> to add comments and replies.</p>
+      )}
       {user && <CommentForm id = {post.id} onCommentPosted={updateComments} />}
       {comments && comments.reverse().map((comment) => (
         <ShowComment key={comment.id} comment={comment} onReplyPosted={updateComments} />
       ))}
     </div>
-    {!user && (
-      <p>Please <Link to="/login">log in</Link> to add comments.</p>
-    )}
+    
     </section>
   );
 };

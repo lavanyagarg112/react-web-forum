@@ -1,0 +1,5 @@
+.linkstyle {
+    color: #77002e;        /* Links are traditionally blue */
+    text-decoration: underline; /* Underline is a common convention for links */
+    cursor: pointer;     /* Changes the cursor to indicate a clickable item */
+  }

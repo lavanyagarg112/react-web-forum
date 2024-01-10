@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom'
 
 import { useEffect } from 'react'
 
+import DeleteComment from './DeleteComment'
+
 export type CommentType = {
     id: number,
     author_name: string,
@@ -102,13 +104,13 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
       return (
         <div className={classes.comment}>
           <p>{comment.author_name}: {comment.content}</p>
+          {comment.author_name === authorname && <DeleteComment id = {comment.id} postId={comment.post_id} onCommentDeleted={onReplyPosted} /> }
+          
           {user && (<form onSubmit={handleReplySubmit}>
             <textarea value={replyContent} onChange={(e) => setReplyContent(e.target.value)} />
             <button type="submit">Reply</button>
           </form>)}
-          {!user && (
-            <p>Please <Link to="/login">log in</Link> to add comments.</p>
-            )}
+
           <div className={classes.replies}>
             {comment.replies && comment.replies.reverse().map((reply: CommentType) => (
               <ShowComment key={reply.id} comment={reply} onReplyPosted={onReplyPosted} />

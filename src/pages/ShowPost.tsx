@@ -8,6 +8,12 @@ import { useAuth } from '../store/auth-context';
 import DeletePost from '../components/posts/DeletePost';
 import { Link } from 'react-router-dom';
 
+import ShowComment from '../components/comments/ShowComment';
+
+import { CommentType } from '../components/comments/ShowComment';
+
+import CommentForm from '../components/comments/CommentForm';
+
 
 type TagType = {
   id: number,
@@ -29,6 +35,7 @@ const ShowPost: React.FC = () => {
   const { isLoggedIn, setIsLoggedIn} = useAuth();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [comments, setComments] = useState<CommentType[]>([]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -46,6 +53,22 @@ const ShowPost: React.FC = () => {
     };
 
     fetchPost();
+
+    const fetchComments = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/posts/${id}/comments`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch comments');
+        }
+        const data = await response.json();
+        setComments(data);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    };
+  
+    fetchComments();
+    
   }, [id]);
 
   useEffect(() => {
@@ -70,41 +93,47 @@ const ShowPost: React.FC = () => {
     }
   }, [isLoggedIn]);
 
-  const editPostHandler = () => {
-    navigate(`/editpost/${id}`)
-  }
 
-  
 
   if (!post) {
     return <div>No Post Found</div>;
   }
 
   return (
-    <div className={classes.showPostContainer}>
-      <h1 className={classes.showPostHeader}>{post.title}</h1>
-      <p className={classes.showPostAuthor}>Written By: {post.author_name}</p>
-      <div className={classes.showPostTags}>
-        {post.tags && post.tags.map(tag => 
-          <span className={classes.showPostTag} key={tag.id}> {tag.name} </span>
-        )}
+    <section>
+      <div className={classes.showPostContainer}>
+        <h1 className={classes.showPostHeader}>{post.title}</h1>
+        <p className={classes.showPostAuthor}>Written By: {post.author_name}</p>
+        <div className={classes.showPostTags}>
+          {post.tags && post.tags.map(tag =>
+            <span className={classes.showPostTag} key={tag.id}> {tag.name} </span>
+          )}
+        </div>
+        <div className={classes.postcontainer}>
+          <p className={classes.showPostDescription}>{post.description}</p>
+        </div>
+        <div className={classes.actionsdiv}>
+          {user && authorname === post.author_name && (
+            <div className={classes.editPostButton}>
+              <Link to={`/editpost/${id}`} className={classes.linkbutton}>Edit Post</Link>
+            </div>
+      
+          )}
+          {user && authorname === post.author_name && (
+            <DeletePost id = {post.id} />
+          )}
+        </div>
       </div>
-      <div className={classes.postcontainer}>
-        <p className={classes.showPostDescription}>{post.description}</p>
-      </div>
-
-      <div className={classes.actionsdiv}>
-        {user && authorname === post.author_name && (
-          <div className={classes.editPostButton}>
-            <Link to={`/editpost/${id}`} className={classes.linkbutton}>Edit Post</Link>
-          </div>
-        
-        )}
-        {user && authorname === post.author_name && (
-          <DeletePost id = {post.id} />
-        )}
-      </div>
+     <div className={classes.commentsSection}>
+      {user && <CommentForm id = {post.id} />}
+      {comments && comments.map((comment) => (
+        <ShowComment key={comment.id} comment={comment} />
+      ))}
     </div>
+    {!user && (
+      <p>Please <Link to="/login">log in</Link> to add comments.</p>
+    )}
+    </section>
   );
 };
 

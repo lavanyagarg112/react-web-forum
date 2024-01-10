@@ -56,9 +56,7 @@ Even for logged in ig.
 
 (In order: )
 
-Add comments
-
-Add Authorname to comments
+Add style to comments
 
 Add tags to categories to view by tags, and when we click on the tag also it redirects
 

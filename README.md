@@ -49,6 +49,12 @@ Interact with the app on localhost:3001 while keeping localhost:3000 open for ba
 
 ## Deployment
 
+Add proper documentation for both backend and frontend
+
+Remove unnecessary and unused code
+
+Using: Heroku (have to login and add info to get access)
+
 When deployed, change the fetch link under Signup page accordingly, as well as the routes in routes.rb of rails if needed.
 Even for logged in ig.
 

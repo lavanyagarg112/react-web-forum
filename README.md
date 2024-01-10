@@ -8,7 +8,7 @@ Welcome to the repository for the Web Forum Project, a Rails-based application d
 
 User Authentication: Secure sign-in functionality with Devise for enhanced security.
 
-CRUD Operations: Users can create, read, update, and delete posts and comments, using intuitive interfaces for seamless navigation and content management.
+CRUD Operations: Users can create, read, update, and delete posts and comments, using intuitive interfaces for seamless navigation and content management. This forum also supports nested comments for enhanced user interaction.
 
 User Profile: Manage display name and logout
 

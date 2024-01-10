@@ -68,6 +68,8 @@ Upvote/ Downvote post
 
 Upvote/ Downvote comment
 
+Edit Comment
+
 Add User Profile for others to see someone's profile with bio and stuff
 
 Make responsive

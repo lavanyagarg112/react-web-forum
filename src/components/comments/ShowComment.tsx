@@ -20,10 +20,11 @@ export type CommentType = {
 }
 
 type CommentProps = {
-    comment: CommentType
+    comment: CommentType,
+    onReplyPosted: () => void
 }
 
-const ShowComment = ({ comment } : CommentProps) => {
+const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
     const [replyContent, setReplyContent] = useState('');
     const {user} = useAuth()
     const [authorname, setAuthorname] = useState('');
@@ -92,7 +93,7 @@ const ShowComment = ({ comment } : CommentProps) => {
     
           // Clear form and optionally refresh comments
           setReplyContent('');
-          navigate(`/showpost/${comment.post_id}`)
+          onReplyPosted()
         } catch (error) {
           console.error('Error posting reply:', error);
         }
@@ -110,7 +111,7 @@ const ShowComment = ({ comment } : CommentProps) => {
             )}
           <div className={classes.replies}>
             {comment.replies && comment.replies.reverse().map((reply: CommentType) => (
-              <ShowComment key={reply.id} comment={reply} />
+              <ShowComment key={reply.id} comment={reply} onReplyPosted={onReplyPosted} />
             ))}
           </div>
         </div>

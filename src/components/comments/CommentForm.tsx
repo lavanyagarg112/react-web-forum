@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 import React from 'react'
 
-const CommentForm = ({id} : {id: number}) => {
+const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () => void}) => {
     const [replyContent, setReplyContent] = useState('');
     console.log(id)
     const {user} = useAuth()
@@ -58,6 +58,7 @@ const CommentForm = ({id} : {id: number}) => {
     
           // Clear form and optionally refresh comments
           setReplyContent('');
+          onCommentPosted()
           
         } catch (error) {
           console.error('Error posting reply:', error);

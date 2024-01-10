@@ -71,6 +71,19 @@ const ShowPost: React.FC = () => {
     
   }, [id]);
 
+  const updateComments = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/posts/${id}/comments`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch comments');
+      }
+      const data = await response.json();
+      setComments(data);
+    } catch (error) {
+      console.error('Error fetching comments:', error);
+    }
+  }
+
   useEffect(() => {
     if (isLoggedIn){
         // Fetch the current display name when the component mounts
@@ -125,9 +138,9 @@ const ShowPost: React.FC = () => {
         </div>
       </div>
      <div className={classes.commentsSection}>
-      {user && <CommentForm id = {post.id} />}
-      {comments && comments.map((comment) => (
-        <ShowComment key={comment.id} comment={comment} />
+      {user && <CommentForm id = {post.id} onCommentPosted={updateComments} />}
+      {comments && comments.reverse().map((comment) => (
+        <ShowComment key={comment.id} comment={comment} onReplyPosted={updateComments} />
       ))}
     </div>
     {!user && (

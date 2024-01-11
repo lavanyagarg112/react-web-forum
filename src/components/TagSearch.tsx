@@ -84,6 +84,7 @@ type Post = {
             description: post.description, // Ensure this property is provided
             tags: post.tags // Ensure this property is provided if applicable
           })));
+          console.log(searchResults)
         
         } else {
           throw new Error('Search failed');
@@ -109,7 +110,9 @@ type Post = {
         <div className={classes.searchresult}>
           {searchResults && searchResults.map((post) => ( // Make sure searchResults is always an array
             <PostItem key={post.id} postData={post} />
+              
           ))}
+          {searchResults.length === 0 && <p>No Post Found</p>}
         </div>
       </div>
     );

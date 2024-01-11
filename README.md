@@ -64,8 +64,6 @@ Even for logged in ig.
 
 Maybe can change comments button to the web page style?? Look at reddit... maybe add background colour for page except post?
 
-Add tags to categories to view by tags, and when we click on the tag also it redirects
-
 Add Favourites
 
 Forgot Password

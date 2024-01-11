@@ -12,7 +12,9 @@ CRUD Operations: Users can create, read, update, and delete posts and comments, 
 
 User Profile: Manage display name and logout
 
-Tags: Users can reuse or add new tags, as well as edit them later, to further personalise the posts
+Tags: Users can reuse or add new tags, as well as edit them later, to further personalise the posts. Further, users can search by tags by either clicking on the tag on allposts or individual post, or by going to Categories page and searching by one or more tags.
+
+Favourites: Users can mark posts as favourite if they wish to view them later/ follow the post. They can remove it from favourites anytime
 
 ## Technology Stack
 
@@ -61,8 +63,6 @@ Even for logged in ig.
 ## To add
 
 (In order: )
-
-Add Favourites
 
 Add User Profile for others to see someone's profile with bio and stuff and their posts
 

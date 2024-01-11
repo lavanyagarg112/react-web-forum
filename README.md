@@ -62,7 +62,7 @@ Even for logged in ig.
 
 (In order: )
 
-Maybe can change comments button to the web page style?? Look at reddit... maybe add background colour for page except post?
+Maybe can change comments button to the web page style?? Look at reddit
 
 Add Favourites
 

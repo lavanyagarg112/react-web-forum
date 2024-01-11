@@ -66,11 +66,11 @@ Add Favourites
 
 Add User Profile for others to see someone's profile with bio and stuff and their posts
 
-Maybe can change comments button to the web page style?? Look at reddit
-
 Make responsive
 
 Add Search Functionality for Posts
+
+Maybe can change comments button to the web page style?? Look at reddit
 
 Forgot Password
 

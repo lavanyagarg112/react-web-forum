@@ -2,12 +2,8 @@ import React from 'react'
 import classes from './PostItem.module.css'
 import Card from '../ui/Card'
 
-import ShowPost from '../../pages/ShowPost'
-
-import { Link } from 'react-router-dom'
-import { usePost } from '../../store/post-context'
-
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 type Props = {
     postData: {
@@ -20,8 +16,10 @@ type Props = {
 }
 
 const PostItem = ({postData}: Props) => {
-    const { setPost } = usePost();
     const navigate = useNavigate();
+    const [isFavourite, setIsFavourite] = useState(false)
+
+    const [favtext, setfavtext] = useState('Add to Favourites')
 
     const handleTag = (id: number) => {
         navigate(`/categories?tagId=${id}`)
@@ -31,7 +29,36 @@ const PostItem = ({postData}: Props) => {
         navigate(`/showpost/${postData.id}`)
     }
 
-    const handleFavourite = () => {
+    const handleFavourite = async () => {
+        
+        const url = `http://localhost:3000/posts/${postData.id}/favorites`;
+    const method = isFavourite ? 'DELETE' : 'POST';
+
+    try {
+      const response = await fetch(url, {
+        method: method,
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          // Include authentication headers if required
+        }
+        
+      });
+
+      if (response.ok) {
+        setIsFavourite(!isFavourite);
+        if (!isFavourite){
+            setfavtext('Remove from Favourites')
+        } else {
+            setfavtext('Add to Favourites')
+        }
+      } else {
+        // handle errors, such as unauthorized or not found
+        throw new Error('Failed to update favorite status');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
 
     }
 
@@ -46,7 +73,7 @@ const PostItem = ({postData}: Props) => {
                 </div>
                 <div className={classes.actions}>
                     <button onClick={handleViewPost}>View Post</button>
-                    <button onClick={handleFavourite}>Add to Favourites</button>
+                    <button onClick={handleFavourite}>{favtext}</button>
                 </div>
             </div>
         </Card>

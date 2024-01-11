@@ -1,5 +1,4 @@
 import React, { useState, FormEvent } from 'react';
-import LogoutButton from './LogoutButton';
 
 import { useEffect } from 'react';
 import { useAuth } from '../store/auth-context';

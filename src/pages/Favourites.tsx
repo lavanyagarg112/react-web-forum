@@ -56,7 +56,7 @@ const Favourites = () => {
   return (
     <section>
       <h1>Favourite Posts</h1>
-      {favoritePosts && favoritePosts.map((post: Post) => (
+      {favoritePosts && favoritePosts.reverse().map((post: Post) => (
           <PostItem key={post.id} postData = {post} onFavoriteChange={fetchFavoritePosts} />
         ))}
     </section>

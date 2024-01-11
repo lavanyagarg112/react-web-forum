@@ -10,82 +10,8 @@ import PostItem from './posts/PostItem';
 
 import classes from "./posts/NewPostForm.module.css"
 
-// type Post = {
-//     id: number,
-//     title: string
-// }
+import { useLocation } from 'react-router-dom';
 
-// type TagOption = {
-//     label: string;
-//     value: number;
-//   };
-
-// const TagSearch = () => {
-//     const [availableTags, setAvailableTags] = useState<TagOption[]>([]);
-//     const [selectedTags, setSelectedTags] = useState<TagOption[]>([]);
-//   const [searchResults, setSearchResults] = useState([]);
-
-//   useEffect(() => {
-
-//     const fetchTags = async () => {
-//         try {
-//           const response = await fetch('http://localhost:3000/tags');
-//           if (!response.ok) {
-//             throw new Error('Failed to fetch tags');
-//           }
-//           const data = await response.json();
-//           const tags = data.map((tag: any) => ({
-//             label: tag.name,
-//             value: tag.id
-//           }));
-//           setAvailableTags(tags);
-//         } catch (error) {
-//           console.error('Error fetching tags:', error);
-//         }
-//       };
-  
-//       fetchTags();
-
-//   }, []);
-
-//   const handleSearch = async () => {
-
-//     // Call the backend API with the tag array
-//     try {
-//       const response = await fetch(`http://localhost:3000/search?tags=${encodeURIComponent(selectedTags.join(','))}`);
-//       if (response.ok) {
-//         const data = await response.json();
-//         setSearchResults(data.posts);
-//         console.log(searchResults)
-//       } else {
-//         throw new Error('Search failed');
-//       }
-//     } catch (error) {
-//       console.error('Error:', error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//         <CreatableSelect
-//             isMulti
-//             options={availableTags}
-//             onChange={(selectedOptions) => setSelectedTags(selectedOptions as TagOption[])}
-//             value={selectedTags}
-//         />
-//       <button onClick={handleSearch}>Search</button>
-//       <div>
-//         {searchResults && searchResults.map((post: Post) => (
-//           <Link to={`/showpost/${post.id}`}>{post.title}</Link>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default TagSearch;
-
-// Define the types for your state.
 type Post = {
     id: number,
     title: string,
@@ -103,6 +29,24 @@ type Post = {
     const [availableTags, setAvailableTags] = useState<TagOption[]>([]);
     const [selectedTags, setSelectedTags] = useState<TagOption[]>([]);
     const [searchResults, setSearchResults] = useState<Post[]>([]); // Initialize as an array of Post
+
+    const useQuery = () => {
+        return new URLSearchParams(useLocation().search);
+      }
+
+    const query = useQuery();
+    const tagIdFromQuery = query.get('tagId');
+
+    useEffect(() => {
+        // If there is a tagId in the query, set it as the selected tag and perform the search
+        if (tagIdFromQuery) {
+          const tagToSelect = availableTags.find(tag => tag.value.toString() === tagIdFromQuery);
+          if (tagToSelect) {
+            setSelectedTags([tagToSelect]);
+            handleSearch([tagToSelect]);
+          }
+        }
+      }, [availableTags, tagIdFromQuery]);
   
     useEffect(() => {
       const fetchTags = async () => {
@@ -125,8 +69,8 @@ type Post = {
       fetchTags();
     }, []);
   
-    const handleSearch = async () => {
-      const tagIds = selectedTags.map((tag) => tag.value); // Get the tag IDs from the selectedTags
+    const handleSearch = async (tagsToSearch = selectedTags) => {
+      const tagIds = tagsToSearch.map((tag) => tag.value); // Get the tag IDs from the selectedTags
       try {
         const response = await fetch(
           `http://localhost:3000/search?tags=${encodeURIComponent(tagIds.join(','))}`
@@ -160,7 +104,7 @@ type Post = {
               }
               value={selectedTags}
             />
-            <div className={classes.actions} ><button onClick={handleSearch}>Search</button></div>
+            <div className={classes.actions} ><button onClick={() => handleSearch(selectedTags)}>Search</button></div>
         </div>
         <div className={classes.searchresult}>
           {searchResults && searchResults.map((post) => ( // Make sure searchResults is always an array

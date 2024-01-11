@@ -106,6 +106,9 @@ const ShowPost: React.FC = () => {
     }
   }, [isLoggedIn]);
 
+  const handleTag = (id: number) => {
+    navigate(`/categories?tagId=${id}`)
+  }
 
 
   if (!post) {
@@ -118,7 +121,7 @@ const ShowPost: React.FC = () => {
         <p className={classes.showPostAuthor}>Written By: {post.author_name}</p>
         <div className={classes.showPostTags}>
           {post.tags && post.tags.map(tag =>
-            <span className={classes.showPostTag} key={tag.id}> {tag.name} </span>
+            <span className={classes.showPostTag} key={tag.id} onClick={ () => handleTag(tag.id)}> {tag.name} </span>
           )}
         </div>
         <div className={classes.postcontainer}>

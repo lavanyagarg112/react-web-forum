@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 import Layout from './components/layouts/Layout';
-import { PostProvider } from './store/post-context';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -23,7 +22,6 @@ function App() {
   return (
     <AuthProvider>
       <Layout>
-        <PostProvider>
           <Routes>
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
@@ -36,7 +34,6 @@ function App() {
               <Route path='/logout' element={<LogOut />} />
               <Route path="/user-data" element={<UserDataPage />} />
           </Routes>
-        </PostProvider>
       </Layout>
     </AuthProvider>
 

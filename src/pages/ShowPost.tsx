@@ -14,6 +14,8 @@ import { CommentType } from '../components/comments/ShowComment';
 
 import CommentForm from '../components/comments/CommentForm';
 
+import FavoriteButton from '../components/posts/FavoriteButton';
+
 
 type TagType = {
   id: number,
@@ -137,7 +139,10 @@ const ShowPost: React.FC = () => {
           {user && authorname === post.author_name && (
             <DeletePost id = {post.id} />
           )}
+
         </div>
+
+        <div className={classes.actions}>{user && <FavoriteButton id = {post.id}/>}</div>
 
         <div className={classes.commentsSection}>
           <h4>Comments</h4>

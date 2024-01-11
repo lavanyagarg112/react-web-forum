@@ -14,11 +14,14 @@ type Props = {
         title: string,
         author_name: string,
         description: string,
-        tags?: { id: number; name: string }[];
+        tags?: { id: number; name: string }[],
+        
     }
+
+    onFavoriteChange?: () => void
 }
 
-const PostItem = ({postData}: Props) => {
+const PostItem = ({postData, onFavoriteChange}: Props) => {
     const navigate = useNavigate();
     const {user} = useAuth()
 
@@ -42,7 +45,7 @@ const PostItem = ({postData}: Props) => {
                 </div>
                 <div className={classes.actions}>
                     <button onClick={handleViewPost}>View Post</button>
-                    {user && <FavoriteButton id = {postData.id} />}
+                    {user && <FavoriteButton id = {postData.id} onFavoriteChange = {onFavoriteChange} />}
                 </div>
             </div>
         </Card>

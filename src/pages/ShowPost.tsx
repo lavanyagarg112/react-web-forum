@@ -140,6 +140,7 @@ const ShowPost: React.FC = () => {
         </div>
 
         <div className={classes.commentsSection}>
+          <h4>Comments</h4>
           {!user && (
             <p>Please <Link to="/login">log in</Link> to add comments and replies.</p>
           )}

@@ -24,7 +24,7 @@ const LogoutButton = () => {
         // Log the user out on the client side by updating the context
         setIsLoggedIn(false);
         setUser(null); // Clear user data
-        navigate('/'); // Redirect to the login page or home page
+        navigate('/login'); // Redirect to the login page or home page
       } else {
         // Handle any errors, such as displaying a message to the user
         console.error('Logout failed:', response);

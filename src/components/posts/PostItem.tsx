@@ -27,6 +27,14 @@ const PostItem = ({postData}: Props) => {
         navigate(`/categories?tagId=${id}`)
       }
 
+    const handleViewPost = () => {
+        navigate(`/showpost/${postData.id}`)
+    }
+
+    const handleFavourite = () => {
+
+    }
+
   return (
     // <li className={classes.item}>
         <Card>
@@ -36,7 +44,10 @@ const PostItem = ({postData}: Props) => {
                 <div>
                     {postData.tags && postData.tags.map(tag => <span className={classes.showtag} key={tag.id} onClick={ () => handleTag(tag.id)}>{tag.name} </span>)}
                 </div>
-                <p> <Link to ={`/showpost/${postData.id}`} onClick={() => setPost(postData)}> View Post </Link> </p>
+                <div className={classes.actions}>
+                    <button onClick={handleViewPost}>View Post</button>
+                    <button onClick={handleFavourite}>Add to Favourites</button>
+                </div>
             </div>
         </Card>
     // </li>

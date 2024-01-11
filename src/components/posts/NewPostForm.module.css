@@ -45,4 +45,16 @@
   }
 
   
-  
+  .searchdiv {
+    padding: 1rem;
+  }
+
+  .searchresult {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax values as needed */
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+
+  }

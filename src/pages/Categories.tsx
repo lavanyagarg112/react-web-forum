@@ -1,9 +1,12 @@
 import React from 'react'
 
+import TagSearch from '../components/TagSearch'
+
+
 const Categories = () => {
   return (
     <section>
-      Categories
+      <TagSearch />
     </section>
   )
 }

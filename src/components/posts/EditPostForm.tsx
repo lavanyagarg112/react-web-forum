@@ -90,32 +90,35 @@ const EditPostForm = () => {
   };
 
   return (
-    <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor="title">Post Title</label>
-          <input type="text" id="title" ref={titleInputRef} value={postTitle} onChange={(e) => setPostTitle(e.target.value)} required />
-        </div>
-
-        <div className={classes.control}>
-          <label htmlFor="description">Description</label>
-          <textarea id="description" ref={descriptionInputRef} rows={5} value={postDescription} onChange={(e) => setPostDescription(e.target.value)} required></textarea>
-        </div>
-
-        <CreatableSelect
-          isMulti
-          options={availableTags}
-          className="basic-multi-select"
-          classNamePrefix="select"
-          onChange={(selectedOptions) => setSelectedTags(selectedOptions as TagOption[])}
-          value={selectedTags}
-        />
-
-        <div className={classes.actions}>
-          <button type="submit">Update Post</button>
-        </div>
-      </form>
-    </Card>
+    <section>
+      <h1>Edit Post</h1>
+      <Card>
+        <form className={classes.form} onSubmit={submitHandler}>
+          <div className={classes.control}>
+            <label htmlFor="title">Edit Post Title</label>
+            <input type="text" id="title" ref={titleInputRef} value={postTitle} onChange={(e) => setPostTitle(e.target.value)} required />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor="description">Edit Description</label>
+            <textarea id="description" ref={descriptionInputRef} rows={5} value={postDescription} onChange={(e) => setPostDescription(e.target.value)} required></textarea>
+          </div>
+          <div className={classes.control}>
+            <label>Edit Tags</label>
+            <CreatableSelect
+              isMulti
+              options={availableTags}
+              className="basic-multi-select"
+              classNamePrefix="select"
+              onChange={(selectedOptions) => setSelectedTags(selectedOptions as TagOption[])}
+              value={selectedTags}
+            />
+          </div>
+          <div className={classes.actions}>
+            <button type="submit">Update Post</button>
+          </div>
+        </form>
+      </Card>
+    </section>
   );
 };
 

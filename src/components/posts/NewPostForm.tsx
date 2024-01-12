@@ -122,14 +122,17 @@ const NewPostForm = () => {
                     <textarea id="description" required rows = {5} ref={descriptionInputRef}></textarea>
                 </div>
 
-                <CreatableSelect
-                    isMulti
-                    options={availableTags}
-                    className="basic-multi-select"
-                    classNamePrefix="select"
-                    onChange={(selectedOptions) => setSelectedTags(selectedOptions as TagOption[])}
-                    value={selectedTags}
-                />
+                <div className={classes.control}>
+                <label>Add Tags</label>
+                  <CreatableSelect
+                      isMulti
+                      options={availableTags}
+                      className="basic-multi-select"
+                      classNamePrefix="select"
+                      onChange={(selectedOptions) => setSelectedTags(selectedOptions as TagOption[])}
+                      value={selectedTags}
+                  />
+                </div>
 
                 <div className={classes.actions}>
                     <button>Add Post</button>

@@ -45,7 +45,7 @@ import { PostData } from '../store/PostType';
     useEffect(() => {
       const fetchTags = async () => {
         try {
-          const response = await fetch('http://localhost:3000/tags');
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/tags`);
           if (!response.ok) {
             throw new Error('Failed to fetch tags');
           }
@@ -67,7 +67,7 @@ import { PostData } from '../store/PostType';
       const tagIds = tagsToSearch.map((tag) => tag.value); // Get the tag IDs from the selectedTags
       try {
         const response = await fetch(
-          `http://localhost:3000/search?tags=${encodeURIComponent(tagIds.join(','))}`
+          `${process.env.REACT_APP_API_URL}/search?tags=${encodeURIComponent(tagIds.join(','))}`
         );
         if (response.ok) {
           const data = await response.json();

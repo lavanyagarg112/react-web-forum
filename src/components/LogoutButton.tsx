@@ -11,7 +11,7 @@ const LogoutButton = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3000/users/sign_out', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/sign_out`, {
         method: 'DELETE',
         credentials: 'include', // This is necessary for including cookies in the request
         headers: {

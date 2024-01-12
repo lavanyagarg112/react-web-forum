@@ -10,7 +10,7 @@ const DeletePost = ({id}: {id: number}) => {
         // Confirm before deleting
         if(window.confirm('Are you sure you want to delete this post?')) {
         try {
-            const response = await fetch(`http://localhost:3000/posts/${postId}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${postId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

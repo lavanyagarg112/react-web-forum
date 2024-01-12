@@ -19,7 +19,7 @@ const UserProfilePage = ({username}: {username: string}) => {
     useEffect(() => {
             const fetchUserInfo= async () => {
             try {
-                const response = await fetch(`http://localhost:3000/users/${username}/user_data`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${username}/user_data`, {
                 credentials: 'include', // to include the authentication cookie
                 });
                 if (response.ok) {

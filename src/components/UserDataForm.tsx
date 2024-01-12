@@ -27,7 +27,7 @@ const UserDataForm = () => {
 
     const fetchPosts = async () => {
       try {
-          const response = await fetch(`http://localhost:3000/users/${user?.username}/posts`);
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${user?.username}/posts`);
           if (!response.ok) {
               throw new Error('Something went wrong!');
           }
@@ -44,7 +44,7 @@ const UserDataForm = () => {
         // Fetch the current display name when the component mounts
         const fetchCurrentDisplayName = async () => {
         try {
-            const response = await fetch('http://localhost:3000/current_user_data', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/current_user_data`, {
             credentials: 'include', // to include the authentication cookie
             });
             if (response.ok) {
@@ -78,7 +78,7 @@ const UserDataForm = () => {
     const trimmedAuthorName = authorname ? authorname.trim() : (user && user.username);
 
     try {
-        const response = await fetch('http://localhost:3000/user_datum', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/user_datum`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

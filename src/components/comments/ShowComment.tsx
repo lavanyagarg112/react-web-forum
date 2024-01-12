@@ -50,7 +50,7 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
             // Fetch the current display name when the component mounts
             const fetchCurrentDisplayName = async () => {
             try {
-                const response = await fetch('http://localhost:3000/current_user_data', {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/current_user_data`, {
                 credentials: 'include', // to include the authentication cookie
                 });
                 if (response.ok) {
@@ -72,7 +72,7 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
         console.log(replyContent)
         // POST request to create a reply
         try {
-          const response = await fetch(`http://localhost:3000/posts/${comment.post_id}/comments/${comment.id}/replies`, {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${comment.post_id}/comments/${comment.id}/replies`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

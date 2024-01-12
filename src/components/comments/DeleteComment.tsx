@@ -10,7 +10,7 @@ const DeleteComment = ({id, postId, onCommentDeleted}: {id: number, postId: numb
         // Confirm before deleting
         if(window.confirm('Are you sure you want to delete this comment?')) {
         try {
-            const response = await fetch(`http://localhost:3000/posts/${postId}/comments/${comId}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments/${comId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

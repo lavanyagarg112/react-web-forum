@@ -8,6 +8,7 @@ export type TagType = {
     title: string;
     author_name: string;
     description: string;
-    tags: TagType[];
+    tags: TagType[],
+    username: string
   };
   

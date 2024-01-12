@@ -80,6 +80,7 @@ const NewPostForm = () => {
           author_name: authorname,
           description: enteredDescription,
           user_id: user?.id,
+          username: user?.username,
           tag_ids: existingTagIds,
           new_tags: newTags
         };

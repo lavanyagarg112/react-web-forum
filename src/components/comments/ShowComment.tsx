@@ -77,7 +77,7 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
               'Content-Type': 'application/json',
               // Add authentication headers if needed
             },
-            body: JSON.stringify({comment: { content: replyContent, parent_id: comment.id, user_id: user?.id, author_name: authorname }})
+            body: JSON.stringify({comment: { content: replyContent, parent_id: comment.id, user_id: user?.id, author_name: authorname, username: user?.username }})
           });
     
           if (!response.ok) {

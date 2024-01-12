@@ -64,7 +64,7 @@ const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () =>
               'Content-Type': 'application/json',
               // Add authentication headers if needed
             },
-            body: JSON.stringify({comment: { content: replyContent, user_id: user?.id, author_name: authorname }})
+            body: JSON.stringify({comment: { content: replyContent, user_id: user?.id, author_name: authorname, username: user?.username }})
           });
     
           if (!response.ok) {

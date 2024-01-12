@@ -10,7 +10,7 @@ User Authentication: Secure sign-in functionality with Devise for enhanced secur
 
 CRUD Operations: Users can create, read, update, and delete posts and comments, using intuitive interfaces for seamless navigation and content management. This forum also supports nested comments for enhanced user interaction.
 
-User Profile: Manage display name and logout
+User Profile: Manage display name and logout. Further, other users can also click on the author names in posts to view user profiles and the posts created by the same author
 
 Tags: Users can reuse or add new tags, as well as edit them later, to further personalise the posts. Further, users can search by tags by either clicking on the tag on allposts or individual post, or by going to Categories page and searching by one or more tags.
 
@@ -75,6 +75,8 @@ Make responsive
 Add Search Functionality for Posts
 
 Forgot Password
+
+Follow Author
 
 Upvote/ Downvote post
 

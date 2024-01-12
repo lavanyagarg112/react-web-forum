@@ -30,7 +30,6 @@ const UserPosts = ({username}: {username: string}) => {
 
   return (
     <div>
-        <h3>My Posts</h3>
           {posts.length > 0 && posts.reverse().map((post: PostData) => 
                 <PostItem 
                     key={post.id} 

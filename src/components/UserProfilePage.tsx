@@ -50,7 +50,7 @@ const UserProfilePage = ({username}: {username: string}) => {
             <p>Bio:</p>
             <p>{bio || "No Bio Yet"}</p>
           </div>
-
+          <h3>Posts by {authorname}</h3>
           <UserPosts username={username} />
 
         </div>)}

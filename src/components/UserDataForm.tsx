@@ -100,6 +100,7 @@ const UserDataForm = () => {
         </form>
 
         {user && <div>
+          <h3>My Posts</h3>
           <UserPosts username={user?.username} />
         </div>}
       </div>

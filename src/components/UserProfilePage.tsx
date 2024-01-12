@@ -26,8 +26,8 @@ const UserProfilePage = ({username}: {username: string}) => {
                 console.log(authorname)
                 }
             } catch (error) {
-                console.error('Failed to fetch current display name:', error);
-                console.log(authorname)
+                console.error('Failed to fetch info:', error);
+                
             }
             };
     
@@ -35,14 +35,17 @@ const UserProfilePage = ({username}: {username: string}) => {
         }, [username]);
       
   return (
-    <div>
-    <h1 className={classes.profileHeader}>User Profile</h1>
-    <p>Username: {username}</p>
-      <p>Display Name: {authorname}</p>
-      <div>
-        <p>Bio:</p>
-        <p>{bio || "No Bio Yet"}</p>
-      </div>
+    <div >
+        {!authorname &&  <p>User does not exist</p>}
+        {authorname && (<div>
+        <h1 className={classes.profileHeader}>User Profile</h1>
+        <p>Username: {username}</p>
+          <p>Display Name: {authorname}</p>
+          <div>
+            <p>Bio:</p>
+            <p>{bio || "No Bio Yet"}</p>
+          </div>
+        </div>)}
     </div>
   )
 }

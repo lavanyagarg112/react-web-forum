@@ -44,6 +44,8 @@ const Favourites = () => {
     }
   };
 
+  console.log(favoritePosts)
+
   useEffect(() => {
     fetchFavoritePosts();
   }, [auth.isLoggedIn]);
@@ -56,9 +58,10 @@ const Favourites = () => {
   return (
     <section>
       <h1>Favourite Posts</h1>
-      {favoritePosts && favoritePosts.reverse().map((post: Post) => (
+      {favoritePosts.length > 0 && favoritePosts.reverse().map((post: Post) => (
           <PostItem key={post.id} postData = {post} onFavoriteChange={fetchFavoritePosts} />
         ))}
+      {favoritePosts.length === 0 && <p>No Favourites added yet</p>}
     </section>
   )
 }

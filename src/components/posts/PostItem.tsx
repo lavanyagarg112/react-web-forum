@@ -35,7 +35,7 @@ const PostItem = ({postData, onFavoriteChange}: Props) => {
 
     
   return (
-    // <li className={classes.item}>
+    <div className={classes.item}>
         <Card>
             <div className={classes.content}>
                 <h3>{postData.title}</h3>
@@ -49,7 +49,7 @@ const PostItem = ({postData, onFavoriteChange}: Props) => {
                 </div>
             </div>
         </Card>
-    // </li>
+     </div>
   )
 }
 

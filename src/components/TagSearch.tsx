@@ -76,7 +76,8 @@ import { PostData } from '../store/PostType';
             title: post.title,
             author_name: post.author_name, // Ensure this property is provided
             description: post.description, // Ensure this property is provided
-            tags: post.tags // Ensure this property is provided if applicable
+            tags: post.tags,
+            username: post.username // Ensure this property is provided if applicable
           })));
           console.log(searchResults)
         

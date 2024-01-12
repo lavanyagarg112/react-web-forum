@@ -10,7 +10,7 @@ User Authentication: Secure sign-in functionality with Devise for enhanced secur
 
 CRUD Operations: Users can create, read, update, and delete posts and comments, using intuitive interfaces for seamless navigation and content management. This forum also supports nested comments for enhanced user interaction.
 
-User Profile: Manage display name and logout. Further, other users can also click on the author names in posts to view user profiles and the posts created by the same author
+User Profile: Manage display name and logout. Further, other users can also click on the author names in posts to view user profiles and the posts created by the same author.
 
 Tags: Users can reuse or add new tags, as well as edit them later, to further personalise the posts. Further, users can search by tags by either clicking on the tag on allposts or individual post, or by going to Categories page and searching by one or more tags.
 
@@ -63,8 +63,6 @@ Even for logged in ig.
 ## To add
 
 (In order: )
-
-Add User Profile for others to see someone's profile with bio and stuff and their posts
 
 Can add option to user to set profile as public or private? Maybe even for show favourites or not?
 

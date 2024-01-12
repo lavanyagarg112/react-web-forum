@@ -13,6 +13,8 @@ import PostItem from './posts/PostItem';
 
 import { PostData } from '../store/PostType';
 
+import { useNavigate } from 'react-router-dom';
+
 
 const UserDataForm = () => {
   const [authorname, setAuthorname] = useState('');
@@ -20,6 +22,8 @@ const UserDataForm = () => {
   const [bio, setBio] = useState('');
     const { user } = useAuth();
     const [posts, setPosts] = useState([]);
+
+    const navigate = useNavigate()
 
     const fetchPosts = async () => {
       try {
@@ -127,7 +131,10 @@ const UserDataForm = () => {
       
         </form>
 
-        <LogoutButton />
+        <div className={classes.profileActions}>
+          <button className={classes.profileButton} onClick={() => navigate(`/user/${user?.username}`)}>View Public Profile</button>
+          <LogoutButton />
+        </div>
 
         {user && <div>
           <h3>My Posts</h3>

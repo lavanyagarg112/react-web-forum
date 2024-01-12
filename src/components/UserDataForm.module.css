@@ -39,6 +39,8 @@
   
   .profileActions {
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
   }
   
   .profileButton {
@@ -51,6 +53,8 @@
     border-radius: 4px;
     font-weight: bold;
   }
+
+
   
   .profileButton:hover,
   .profileButton:active {

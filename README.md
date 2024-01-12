@@ -66,7 +66,7 @@ Even for logged in ig.
 
 Add User Profile for others to see someone's profile with bio and stuff and their posts
 
-Can add option to user to set profile as public or private?
+Can add option to user to set profile as public or private? Maybe even for show favourites or not?
 
 Can improve comments section (Maybe can change comments button to the web page style?? Look at reddit)
 

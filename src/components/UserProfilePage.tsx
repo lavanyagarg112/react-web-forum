@@ -1,22 +1,20 @@
 import React from 'react'
 
 import { useEffect } from 'react';
-import { useAuth } from '../store/auth-context';
 
 import { useState } from 'react';
 
 import classes from "./UserDataForm.module.css"
 
-import PostItem from './posts/PostItem';
 
-import { PostData } from '../store/PostType';
+import UserPosts from './posts/UserPosts';
+
 
 
 const UserProfilePage = ({username}: {username: string}) => {
 
     const [authorname, setAuthorname] = useState('');
     const [bio, setBio] = useState('');
-    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
             const fetchUserInfo= async () => {
@@ -40,24 +38,6 @@ const UserProfilePage = ({username}: {username: string}) => {
             fetchUserInfo();
         }, [username]);
 
-        useEffect(() => {
-          // Function to fetch posts
-          const fetchPosts = async () => {
-              try {
-                  const response = await fetch(`http://localhost:3000/users/${username}/posts`);
-                  if (!response.ok) {
-                      throw new Error('Something went wrong!');
-                  }
-                  const data = await response.json();
-                  setPosts(data);
-              } catch (error) {
-                  console.error(error);
-                  // Handle error here, e.g., set error state
-              }
-          };
-  
-          fetchPosts();
-      }, []);
       
   return (
     <div >
@@ -71,13 +51,7 @@ const UserProfilePage = ({username}: {username: string}) => {
             <p>{bio || "No Bio Yet"}</p>
           </div>
 
-          <h3>Posts by {authorname}</h3>
-          {posts.reverse().map((post: PostData) => 
-                <PostItem 
-                    key={post.id} 
-                    postinfo = {post}
-                /> 
-            )}
+          <UserPosts username={username} />
 
         </div>)}
     </div>

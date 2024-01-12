@@ -5,6 +5,8 @@ import { useAuth } from '../store/auth-context';
 
 import classes from "./UserDataForm.module.css"
 
+import UserPosts from './posts/UserPosts';
+
 
 const UserDataForm = () => {
   const [authorname, setAuthorname] = useState('');
@@ -97,6 +99,9 @@ const UserDataForm = () => {
       
         </form>
 
+        {user && <div>
+          <UserPosts username={user?.username} />
+        </div>}
       </div>
 
 

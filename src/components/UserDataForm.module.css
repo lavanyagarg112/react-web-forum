@@ -28,7 +28,8 @@
     margin-bottom: 0.5rem;
   }
   
-  .profileControl input {
+  .profileControl input,
+  .profileControl textarea {
     font: inherit;
     border-radius: 4px;
     border: 1px solid #ccc;

@@ -9,6 +9,7 @@ import classes from "./UserDataForm.module.css"
 const UserDataForm = () => {
   const [authorname, setAuthorname] = useState('');
   const { isLoggedIn, setIsLoggedIn} = useAuth();
+  const [bio, setBio] = useState('');
     const { user } = useAuth();
     console.log("user data: "+ isLoggedIn)
   useEffect(() => {
@@ -22,6 +23,7 @@ const UserDataForm = () => {
             if (response.ok) {
             const data = await response.json();
               setAuthorname(data.authorname); 
+              setBio(data.bio)
 
             console.log(authorname)
             }
@@ -49,7 +51,7 @@ const UserDataForm = () => {
             'Content-Type': 'application/json',
             // Include authentication headers if needed
         },
-        body: JSON.stringify({ user_data: {authorname: trimmedAuthorName} }),
+        body: JSON.stringify({ user_data: {authorname: trimmedAuthorName, bio: bio} }),
         credentials: 'include',
         });
 
@@ -57,6 +59,7 @@ const UserDataForm = () => {
         // Handle successful response
         const data = await response.json();
         setAuthorname(data.authorname);
+        setBio(data.bio)
         } else {
         // Handle errors
         const errorData = await response.json();
@@ -72,14 +75,21 @@ const UserDataForm = () => {
       <div>
       <h1 className={classes.profileHeader}>Your Profile</h1>
         {user && <p>Username: {user.username}</p>}
-        <p className={classes.profileInfo}>If no display name is set, then your posts/comments will be published only under your username</p>
+        <p className={classes.profileInfo}>If no display name is set, then your posts/comments will be published under your username. <br /> To remove display name, leave the display name field blank </p>
         <p>Display Name: {authorname}</p>
-
+        <div>
+          <p>Bio:</p>
+          <p>{bio || "No Bio Yet"}</p>
+        </div>
         <form onSubmit={handleSubmit} className={classes.profileForm}>
 
           <div className={classes.profileControl}>
             <label>Display Name</label>
             <input type="text" value={authorname}  onChange={(e) => setAuthorname(e.target.value)} />
+          </div>
+          <div className={classes.profileControl}>
+            <label>Bio</label>
+            <textarea name="bio" onChange={(e) => setBio(e.target.value)} value={bio || ""}></textarea>
           </div>
           <div className={classes.profileActions}>
             <button type="submit" className={classes.profileButton}>Save</button>

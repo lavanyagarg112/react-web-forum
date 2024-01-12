@@ -17,6 +17,7 @@ import LogOut from './pages/LogOut';
 import UserDataPage from './pages/UserDataPage';
 import { AuthProvider } from './store/auth-context';
 import EditPost from './pages/EditPost';
+import UserProfile from './pages/UserProfile';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path='/favourites' element={<Favourites />} />
               <Route path='/logout' element={<LogOut />} />
               <Route path="/user-data" element={<UserDataPage />} />
+              <Route path='/user/:username' element={<UserProfile />} />
           </Routes>
       </Layout>
     </AuthProvider>

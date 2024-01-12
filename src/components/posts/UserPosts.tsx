@@ -10,7 +10,7 @@ const UserPosts = ({username}: {username: string}) => {
 
     useEffect(() => {
         // Function to fetch posts
-        const fetchPosts = async () => {
+    const fetchPosts = async () => {
             try {
                 const response = await fetch(`http://localhost:3000/users/${username}/posts`);
                 if (!response.ok) {
@@ -41,5 +41,6 @@ const UserPosts = ({username}: {username: string}) => {
     </div>
   )
 }
+
 
 export default UserPosts

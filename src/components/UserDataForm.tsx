@@ -7,13 +7,34 @@ import classes from "./UserDataForm.module.css"
 
 import UserPosts from './posts/UserPosts';
 
+import LogoutButton from './LogoutButton';
+
+import PostItem from './posts/PostItem';
+
+import { PostData } from '../store/PostType';
+
 
 const UserDataForm = () => {
   const [authorname, setAuthorname] = useState('');
   const { isLoggedIn, setIsLoggedIn} = useAuth();
   const [bio, setBio] = useState('');
     const { user } = useAuth();
-    console.log("user data: "+ isLoggedIn)
+    const [posts, setPosts] = useState([]);
+
+    const fetchPosts = async () => {
+      try {
+          const response = await fetch(`http://localhost:3000/users/${user?.username}/posts`);
+          if (!response.ok) {
+              throw new Error('Something went wrong!');
+          }
+          const data = await response.json();
+          setPosts(data);
+      } catch (error) {
+          console.error(error);
+      }
+  };
+
+
   useEffect(() => {
     if (isLoggedIn){
         // Fetch the current display name when the component mounts
@@ -39,6 +60,12 @@ const UserDataForm = () => {
     }
   }, [isLoggedIn]);
 
+  useEffect(() => {
+
+    fetchPosts();
+}, []);
+
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Make API call to backend to save UserData
@@ -62,6 +89,7 @@ const UserDataForm = () => {
         const data = await response.json();
         setAuthorname(data.authorname);
         setBio(data.bio)
+        fetchPosts();
         } else {
         // Handle errors
         const errorData = await response.json();
@@ -87,11 +115,11 @@ const UserDataForm = () => {
 
           <div className={classes.profileControl}>
             <label>Display Name</label>
-            <input type="text" value={authorname}  onChange={(e) => setAuthorname(e.target.value)} />
+            <input type="text" value={authorname}  onChange={(e) => setAuthorname(e.target.value)} placeholder='Add Display Name here...' />
           </div>
           <div className={classes.profileControl}>
             <label>Bio</label>
-            <textarea name="bio" onChange={(e) => setBio(e.target.value)} value={bio || ""}></textarea>
+            <textarea name="bio" onChange={(e) => setBio(e.target.value)} value={bio || ""} placeholder='Add bio here...'></textarea>
           </div>
           <div className={classes.profileActions}>
             <button type="submit" className={classes.profileButton}>Save</button>
@@ -99,9 +127,18 @@ const UserDataForm = () => {
       
         </form>
 
+        <LogoutButton />
+
         {user && <div>
           <h3>My Posts</h3>
-          <UserPosts username={user?.username} />
+          {posts.length > 0 && posts.reverse().map((post: PostData) => 
+                <PostItem 
+                    key={post.id} 
+                    postinfo = {post}
+                /> 
+            )}
+            {posts.length === 0 && <p>No posts created yet</p>}
+      
         </div>}
       </div>
 

@@ -36,7 +36,7 @@ const PostItem = ({postinfo, onFavoriteChange}: Props) => {
         <Card>
             <div className={classes.content}>
                 <h3>{postinfo.title}</h3>
-                <p>Author: <Link to = {`/user/${postinfo.username}`}>{postinfo.author_name}</Link></p>
+                <p>Posted by: {((!user || user.username !== postinfo.username) && <Link to = {`/user/${postinfo.username}`}>{postinfo.author_name}</Link>) || (<Link to = "/user-data">{postinfo.author_name}</Link>) }</p>
                 <div>
                     {postinfo.tags && postinfo.tags.map(tag => <span className={classes.showtag} key={tag.id} onClick={ () => handleTag(tag.id)}>{tag.name} </span>)}
                 </div>

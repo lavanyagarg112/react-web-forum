@@ -15,9 +15,10 @@ const UserDataPage = () => {
     }
 
   return (
-    <div className={classes.profileContainer}>
-      {isLoggedIn && <UserDataForm />}
-      {isLoggedIn && <LogoutButton />}
+    <div>
+      <div className={classes.profileContainer}>
+        {isLoggedIn && <UserDataForm />}
+      </div>
     </div>
   )
 }

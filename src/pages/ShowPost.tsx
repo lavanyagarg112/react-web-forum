@@ -110,7 +110,7 @@ const ShowPost: React.FC = () => {
   return (
     <div className={classes.showPostContainer}>
         <h1 className={classes.showPostHeader}>{post.title}</h1>
-        <p className={classes.showPostAuthor}>Written By: <Link to={`/user/${post.username}`}>{post.author_name}</Link></p>
+        <p className={classes.showPostAuthor}>Posted by: {((!user || user.username !== post.username) && <Link to = {`/user/${post.username}`}>{post.author_name}</Link>) || (<Link to = "/user-data">{post.author_name}</Link>) }</p>
         <div className={classes.showPostTags}>
           {post.tags && post.tags.map(tag =>
             <span className={classes.showPostTag} key={tag.id} onClick={ () => handleTag(tag.id)}> {tag.name} </span>

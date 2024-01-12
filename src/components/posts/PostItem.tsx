@@ -10,6 +10,8 @@ import { useAuth } from '../../store/auth-context'
 
 import { PostData } from '../../store/PostType'
 
+import { Link } from 'react-router-dom'
+
 type Props = {
     postinfo: PostData
 
@@ -34,7 +36,7 @@ const PostItem = ({postinfo, onFavoriteChange}: Props) => {
         <Card>
             <div className={classes.content}>
                 <h3>{postinfo.title}</h3>
-                <p>Author: {postinfo.author_name}</p>
+                <p>Author: <Link to = {`/user/${postinfo.username}`}>{postinfo.author_name}</Link></p>
                 <div>
                     {postinfo.tags && postinfo.tags.map(tag => <span className={classes.showtag} key={tag.id} onClick={ () => handleTag(tag.id)}>{tag.name} </span>)}
                 </div>

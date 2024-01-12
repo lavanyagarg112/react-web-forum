@@ -18,7 +18,8 @@ export type CommentType = {
     author_name: string,
     content: string,
     post_id: number,
-    replies: CommentType[]
+    replies: CommentType[],
+    username: string
 }
 
 type CommentProps = {
@@ -95,7 +96,7 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
 
       return (
         <div className={classes.comment}>
-          <p className={classes.author}>{comment.author_name}:</p>
+          <p className={classes.author}><Link to={`/user/${comment.username}`} >{comment.author_name}</Link>:</p>
           <p>{comment.content}</p>
           {comment.author_name === authorname && <DeleteComment id = {comment.id} postId={comment.post_id} onCommentDeleted={onReplyPosted} /> }
 

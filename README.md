@@ -64,11 +64,11 @@ Even for logged in ig.
 
 (In order: )
 
-Can add option to user to set profile as public or private? Maybe even for show favourites or not?
-
 Can improve comments section (Maybe can change comments button to the web page style?? Look at reddit)
 
 Make responsive
+
+Can add option to user to set profile as public or private? Maybe even for show favourites or not?
 
 Add Search Functionality for Posts
 

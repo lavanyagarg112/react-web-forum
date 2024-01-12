@@ -8,20 +8,15 @@ import FavoriteButton from './FavoriteButton'
 
 import { useAuth } from '../../store/auth-context'
 
+import { PostData } from '../../store/PostType'
+
 type Props = {
-    postData: {
-        id: number,
-        title: string,
-        author_name: string,
-        description: string,
-        tags?: { id: number; name: string }[],
-        
-    }
+    postinfo: PostData
 
     onFavoriteChange?: () => void
 }
 
-const PostItem = ({postData, onFavoriteChange}: Props) => {
+const PostItem = ({postinfo, onFavoriteChange}: Props) => {
     const navigate = useNavigate();
     const {user} = useAuth()
 
@@ -30,7 +25,7 @@ const PostItem = ({postData, onFavoriteChange}: Props) => {
       }
 
     const handleViewPost = () => {
-        navigate(`/showpost/${postData.id}`)
+        navigate(`/showpost/${postinfo.id}`)
     }
 
     
@@ -38,14 +33,14 @@ const PostItem = ({postData, onFavoriteChange}: Props) => {
     <div className={classes.item}>
         <Card>
             <div className={classes.content}>
-                <h3>{postData.title}</h3>
-                <p>Author: {postData.author_name}</p>
+                <h3>{postinfo.title}</h3>
+                <p>Author: {postinfo.author_name}</p>
                 <div>
-                    {postData.tags && postData.tags.map(tag => <span className={classes.showtag} key={tag.id} onClick={ () => handleTag(tag.id)}>{tag.name} </span>)}
+                    {postinfo.tags && postinfo.tags.map(tag => <span className={classes.showtag} key={tag.id} onClick={ () => handleTag(tag.id)}>{tag.name} </span>)}
                 </div>
                 <div className={classes.actions}>
                     <button onClick={handleViewPost}>View Post</button>
-                    {user && <FavoriteButton id = {postData.id} onFavoriteChange = {onFavoriteChange} />}
+                    {user && <FavoriteButton id = {postinfo.id} onFavoriteChange = {onFavoriteChange} />}
                 </div>
             </div>
         </Card>

@@ -16,19 +16,9 @@ import CommentForm from '../components/comments/CommentForm';
 
 import FavoriteButton from '../components/posts/FavoriteButton';
 
+import { TagType, PostData } from '../store/PostType';
 
-type TagType = {
-  id: number,
-  name: string;
-};
 
-type PostData = {
-  id: number;
-  title: string;
-  author_name: string;
-  description: string;
-  tags: TagType[];
-};
 
 const ShowPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();

@@ -12,13 +12,7 @@ import classes from "./posts/NewPostForm.module.css"
 
 import { useLocation } from 'react-router-dom';
 
-type Post = {
-    id: number,
-    title: string,
-    author_name: string,
-    description: string,
-    tags?: { id: number; name: string }[];
-  };
+import { PostData } from '../store/PostType';
   
   type TagOption = {
     label: string;
@@ -28,7 +22,7 @@ type Post = {
   const TagSearch = () => {
     const [availableTags, setAvailableTags] = useState<TagOption[]>([]);
     const [selectedTags, setSelectedTags] = useState<TagOption[]>([]);
-    const [searchResults, setSearchResults] = useState<Post[]>([]); // Initialize as an array of Post
+    const [searchResults, setSearchResults] = useState<PostData[]>([]); // Initialize as an array of Post
 
     const useQuery = () => {
         return new URLSearchParams(useLocation().search);
@@ -77,7 +71,7 @@ type Post = {
         );
         if (response.ok) {
           const data = await response.json();
-          setSearchResults(data.map((post: Post) => ({
+          setSearchResults(data.map((post: PostData) => ({
             id: post.id,
             title: post.title,
             author_name: post.author_name, // Ensure this property is provided
@@ -109,7 +103,7 @@ type Post = {
         </div>
         <div className={classes.searchresult}>
           {searchResults && searchResults.map((post) => ( // Make sure searchResults is always an array
-            <PostItem key={post.id} postData={post} />
+            <PostItem key={post.id} postinfo={post} />
               
           ))}
           {searchResults.length === 0 && <p>No Post Found</p>}

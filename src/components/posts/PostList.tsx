@@ -3,16 +3,11 @@ import classes from './PostList.module.css'
 
 import PostItem from './PostItem'
 
-type Post = {
-    id: number,
-    title: string,
-    author_name: string,
-    description: string,
-    tags?: { id: number; name: string }[];
-}
+import { PostData } from '../../store/PostType'
+
 
 type PostListProps = {
-    allposts: Post[];
+    allposts: PostData[];
   };
 
   
@@ -20,10 +15,10 @@ type PostListProps = {
 const PostList = ({allposts}: PostListProps) => {
   return (
     <div className={classes.grid}>
-            {allposts.reverse().map((post: Post) => 
+            {allposts.reverse().map((post: PostData) => 
                 <PostItem 
                     key={post.id} 
-                    postData = {post}
+                    postinfo = {post}
                 /> 
             )}
         </div>

@@ -8,13 +8,7 @@ import { useState, useEffect } from 'react'
 
 import PostItem from '../components/posts/PostItem'
 
-type Post = {
-  id: number,
-  title: string,
-  author_name: string,
-  description: string,
-  tags?: { id: number; name: string }[];
-}
+import { PostData } from '../store/PostType'
 
 const Favourites = () => {
   const auth = useAuth();
@@ -58,8 +52,8 @@ const Favourites = () => {
   return (
     <section>
       <h1>Favourite Posts</h1>
-      {favoritePosts.length > 0 && favoritePosts.reverse().map((post: Post) => (
-          <PostItem key={post.id} postData = {post} onFavoriteChange={fetchFavoritePosts} />
+      {favoritePosts.length > 0 && favoritePosts.reverse().map((post: PostData) => (
+          <PostItem key={post.id} postinfo = {post} onFavoriteChange={fetchFavoritePosts} />
         ))}
       {favoritePosts.length === 0 && <p>No Favourites added yet</p>}
     </section>

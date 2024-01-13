@@ -12,7 +12,7 @@ const UserPosts = ({username}: {username: string}) => {
         // Function to fetch posts
     const fetchPosts = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/users/${username}/posts`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${username}/posts`);
                 if (!response.ok) {
                     throw new Error('Something went wrong!');
                 }

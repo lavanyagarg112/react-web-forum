@@ -32,7 +32,7 @@ const ShowPost: React.FC = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/posts/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch post');
         }
@@ -48,7 +48,7 @@ const ShowPost: React.FC = () => {
 
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/posts/${id}/comments`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${id}/comments`);
         if (!response.ok) {
           throw new Error('Failed to fetch comments');
         }
@@ -65,7 +65,7 @@ const ShowPost: React.FC = () => {
 
   const updateComments = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/posts/${id}/comments`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${id}/comments`);
       if (!response.ok) {
         throw new Error('Failed to fetch comments');
       }
@@ -81,7 +81,7 @@ const ShowPost: React.FC = () => {
         // Fetch the current display name when the component mounts
         const fetchCurrentDisplayName = async () => {
         try {
-            const response = await fetch('http://localhost:3000/current_user_data', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/current_user_data`, {
             credentials: 'include', // to include the authentication cookie
             });
             if (response.ok) {

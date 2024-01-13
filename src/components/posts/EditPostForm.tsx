@@ -30,14 +30,14 @@ const EditPostForm = () => {
     const fetchPostAndTags = async () => {
       try {
         // Fetch post data
-        const postResponse = await fetch(`http://localhost:3000/posts/${id}`);
+        const postResponse = await fetch(`${process.env.REACT_APP_API_URL}/posts/${id}`);
         const postData = await postResponse.json();
         setPostTitle(postData.title);
         setPostDescription(postData.description);
         setSelectedTags(postData.tags.map((tag: any) => ({ label: tag.name, value: tag.id })));
 
         // Fetch tags data
-        const tagsResponse = await fetch('http://localhost:3000/tags');
+        const tagsResponse = await fetch(`${process.env.REACT_APP_API_URL}/tags`);
         const tagsData = await tagsResponse.json();
         setAvailableTags(tagsData.map((tag: any) => ({ label: tag.name, value: tag.id })));
       } catch (error) {
@@ -70,7 +70,7 @@ const EditPostForm = () => {
 
     // Update the post
     try {
-      const response = await fetch(`http://localhost:3000/posts/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/posts/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

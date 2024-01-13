@@ -30,7 +30,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(() => {
     const checkLoggedIn = async () => {
       try {
-        const response = await fetch('http://localhost:3000/logged_in', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/logged_in`, {
           credentials: 'include',
         });
         const data = await response.json();

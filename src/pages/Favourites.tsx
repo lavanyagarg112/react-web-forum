@@ -17,7 +17,7 @@ const Favourites = () => {
 
   const fetchFavoritePosts = async () => {
     try {
-      const response = await fetch('http://localhost:3000/favorites', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/favorites`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

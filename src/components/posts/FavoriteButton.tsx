@@ -22,7 +22,7 @@ const FavoriteButton = ({id, onFavoriteChange}: {id: number, onFavoriteChange?: 
 
         const checkFavoriteStatus = async (postId: number) => {
             try {
-            const response = await fetch(`http://localhost:3000/favorites/check/${postId}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/favorites/check/${postId}`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -54,7 +54,7 @@ const FavoriteButton = ({id, onFavoriteChange}: {id: number, onFavoriteChange?: 
 
         const handleFavourite = async () => {
             
-            const url = `http://localhost:3000/posts/${id}/favorites`;
+            const url = `${process.env.REACT_APP_API_URL}/posts/${id}/favorites`;
         const method = isFavourite ? 'DELETE' : 'POST';
 
         try {

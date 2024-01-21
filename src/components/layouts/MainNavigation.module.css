@@ -63,6 +63,7 @@
     top: 5rem;
     left: 0;
     background-color: #77002e;
+    z-index: 100;
   }
 
 

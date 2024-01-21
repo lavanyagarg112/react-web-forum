@@ -45,9 +45,12 @@ const UserDataForm = () => {
         // Fetch the current display name when the component mounts
         const fetchCurrentDisplayName = async () => {
         try {
-          
+          const token = localStorage.getItem('token');
             const response = await fetch(`${process.env.REACT_APP_API_URL}/current_user_data`, {
             credentials: 'include', // to include the authentication cookie
+            headers: {
+              'Authorization': `Bearer ${token}`, // Include the JWT token in the Authorization header
+            },
             });
             if (response.ok) {
             const data = await response.json();

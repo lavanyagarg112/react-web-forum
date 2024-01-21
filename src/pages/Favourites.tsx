@@ -17,9 +17,11 @@ const Favourites = () => {
 
   const fetchFavoritePosts = async () => {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`${process.env.REACT_APP_API_URL}/favorites`, {
         method: 'GET',
         headers: {
+          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
           // Include any necessary headers like authentication tokens
         },

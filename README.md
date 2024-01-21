@@ -16,6 +16,10 @@ Tags: Users can reuse or add new tags, as well as edit them later, to further pe
 
 Favourites: Users can mark posts as favourite if they wish to view them later/ follow the post. They can remove it from favourites anytime
 
+Responsive: Responsive on mobile
+
+Tokens: JWT Tokens for authentication
+
 ## Technology Stack
 
 Backend: Ruby on Rails
@@ -30,36 +34,8 @@ Deployment: Render
 
 ## Deployment
 
-Add proper documentation for both backend and frontend
+Deployed on Render.
 
-Remove unnecessary and unused code
+You can find the deployed app here: [ThreadTalk](https://threadtalk-t5y1.onrender.com/)
 
-## To add
 
-(In order: )
-
-Can improve comments section (Maybe can change comments button to the web page style?? Look at reddit)
-
-Make responsive
-
-Can add option to user to set profile as public or private? Maybe even for show favourites or not?
-
-Add Search Functionality for Posts
-
-Forgot Password
-
-Follow Author
-
-Upvote/ Downvote post
-
-Upvote/ Downvote comment
-
-Edit Comment
-
-How to make tags more restrictive so that it isnt spammed?
-
-Add Search Functionality for Users
-
-If we ask to login how to go back to the page we were asked to login from (for eg from favourites/ editpost etc)
-
-Change styling

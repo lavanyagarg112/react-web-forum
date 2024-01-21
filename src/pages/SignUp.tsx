@@ -27,7 +27,7 @@ const Signup: React.FC = () => {
   try {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
       method: 'POST',
-      credentials: 'include',
+      // credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },

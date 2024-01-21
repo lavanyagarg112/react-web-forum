@@ -26,7 +26,7 @@ const FavoriteButton = ({id, onFavoriteChange}: {id: number, onFavoriteChange?: 
             const response = await fetch(`${process.env.REACT_APP_API_URL}/favorites/check/${postId}`, {
               
                 method: 'GET',
-                credentials: 'include',
+                // credentials: 'include',
                 headers: {
                   'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const FavoriteButton = ({id, onFavoriteChange}: {id: number, onFavoriteChange?: 
         try {
         const response = await fetch(url, {
             method: method,
-            credentials: 'include',
+            // credentials: 'include',
             headers: {
               'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',

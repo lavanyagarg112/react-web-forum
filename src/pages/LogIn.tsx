@@ -29,7 +29,7 @@ const Login: React.FC = () => {
             password,
           }
         }),
-        credentials: 'include', // Required for cookies to be sent with the request
+        // credentials: 'include', // Required for cookies to be sent with the request
       });
 
       const data = await response.json();

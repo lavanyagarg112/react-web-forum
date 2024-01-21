@@ -47,7 +47,7 @@ const UserDataForm = () => {
         try {
           const token = localStorage.getItem('token');
             const response = await fetch(`${process.env.REACT_APP_API_URL}/current_user_data`, {
-            credentials: 'include', // to include the authentication cookie
+            // credentials: 'include', // to include the authentication cookie
             headers: {
               'Authorization': `Bearer ${token}`, // Include the JWT token in the Authorization header
             },
@@ -92,7 +92,7 @@ const UserDataForm = () => {
 
         },
         body: JSON.stringify({ user_data: {authorname: trimmedAuthorName, bio: bio} }),
-        credentials: 'include',
+        // credentials: 'include',
         });
 
         if (response.ok) {

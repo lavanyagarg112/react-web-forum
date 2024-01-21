@@ -26,7 +26,7 @@ const Favourites = () => {
           // Include any necessary headers like authentication tokens
         },
         // Include credentials if your API requires authentication
-        credentials: 'include',
+        // credentials: 'include',
       });
 
       if (!response.ok) {

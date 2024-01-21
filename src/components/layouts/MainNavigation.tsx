@@ -28,6 +28,7 @@ const MainNavigation = () => {
       </div>
       <nav>
         <ul>
+            <li><Link to="/" onClick={toggleMenuHandler}>All Posts</Link></li>
           <li><Link to="/newpost" onClick={toggleMenuHandler}>Add New Post</Link></li>
           <li><Link to="/favourites" onClick={toggleMenuHandler}>My Favourites</Link></li>
           <li><Link to="/Categories" onClick={toggleMenuHandler}>Categories</Link></li>

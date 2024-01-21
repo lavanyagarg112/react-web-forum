@@ -22,7 +22,7 @@ let link = "/"
 
   return (
     <header className={classes.header}>
-            <div className={classes.logo}><Link to="/">React Web Forum</Link></div>
+            <div className={classes.logo}><Link to="/">Thread Talk</Link></div>
             <nav>
                 <ul>
                     {/* <li><a href="">Some Link</a></li> 

@@ -96,7 +96,7 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
 
       return (
         <div className={classes.comment}>
-          <p className={classes.author}><Link to={`/user/${comment.username}`} >{comment.author_name}</Link>:</p>
+          <p className={classes.author}>{((!user || user.username !== comment.username) && <Link to = {`/user/${comment.username}`}>{comment.author_name}</Link>) || (<Link to = "/user-data">{comment.author_name}</Link>) }:</p>
           <p>{comment.content}</p>
           {comment.author_name === authorname && <DeleteComment id = {comment.id} postId={comment.post_id} onCommentDeleted={onReplyPosted} /> }
 

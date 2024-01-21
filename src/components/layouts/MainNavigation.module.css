@@ -63,12 +63,18 @@
     background-color: #77002e;
   }
 
-  .hamburger {
-    display: block;
+
+
+  .menu-open nav ul {
+    display: flex;
   }
 
-  .menu-open .header nav ul {
-    display: flex;
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 10%;
+    top: 20px;
   }
 
   .header li {

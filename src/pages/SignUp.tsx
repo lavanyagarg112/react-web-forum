@@ -49,6 +49,7 @@ const Signup: React.FC = () => {
     }
 
     const data = await response.json();
+    localStorage.setItem('token', data.token);
     navigate('/login'); 
 
   } catch (error) {

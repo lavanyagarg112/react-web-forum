@@ -22,12 +22,15 @@ const FavoriteButton = ({id, onFavoriteChange}: {id: number, onFavoriteChange?: 
 
         const checkFavoriteStatus = async (postId: number) => {
             try {
+              const token = localStorage.getItem('token');
             const response = await fetch(`${process.env.REACT_APP_API_URL}/favorites/check/${postId}`, {
+              
                 method: 'GET',
                 credentials: 'include',
                 headers: {
+                  'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                // Include authentication headers if required
+
                 }
             });
             if (response.ok) {
@@ -56,14 +59,16 @@ const FavoriteButton = ({id, onFavoriteChange}: {id: number, onFavoriteChange?: 
             
             const url = `${process.env.REACT_APP_API_URL}/posts/${id}/favorites`;
         const method = isFavourite ? 'DELETE' : 'POST';
+        const token = localStorage.getItem('token');
 
         try {
         const response = await fetch(url, {
             method: method,
             credentials: 'include',
             headers: {
+              'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
-            // Include authentication headers if required
+            
             }
             
         });

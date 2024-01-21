@@ -35,6 +35,7 @@ const Login: React.FC = () => {
       const data = await response.json();
       if (response.ok) {
         // Login successful
+        localStorage.setItem('token', data.token);
         setIsLoggedIn(true);
         setUser(data.user);
         navigate('/user-data'); // Navigate to the home page after login

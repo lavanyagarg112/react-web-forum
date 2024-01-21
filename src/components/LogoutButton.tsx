@@ -15,7 +15,6 @@ const LogoutButton = () => {
         method: 'DELETE',
         // credentials: 'include', // This is necessary for including cookies in the request
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
           // ...any other headers that your server might require
         },
@@ -23,6 +22,7 @@ const LogoutButton = () => {
 
       if (response.ok) {
         // Log the user out on the client side by updating the context
+        localStorage.removeItem('token');
         setIsLoggedIn(false);
         setUser(null); // Clear user data
         navigate('/login'); // Redirect to the login page or home page

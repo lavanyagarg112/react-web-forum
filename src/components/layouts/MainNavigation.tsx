@@ -19,7 +19,7 @@ const MainNavigation = () => {
   };
 
   return (
-    <header className={`${classes.header} ${menuIsOpen ? 'menu-open' : ''}`}>
+    <header className={`${classes.header} ${menuIsOpen ? classes['menu-open'] : ''}`}>
       <div className={classes.logo}><Link to="/">Thread Talk</Link></div>
       <div className={classes.hamburger} onClick={toggleMenuHandler}>
         <span></span>

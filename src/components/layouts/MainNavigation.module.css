@@ -52,6 +52,10 @@
   background-color: white;
 }
 
+.menu-open {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .header nav ul {
     display: none;
@@ -65,10 +69,9 @@
 
 
 
-  .menu-open nav ul {
+  .header.menu-open nav ul {
     display: flex;
   }
-
 
   .hamburger {
     display: block;

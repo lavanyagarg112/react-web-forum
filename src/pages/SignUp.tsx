@@ -29,6 +29,7 @@ const Signup: React.FC = () => {
       method: 'POST',
       // credentials: 'include',
       headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

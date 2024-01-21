@@ -15,6 +15,7 @@ const LogoutButton = () => {
         method: 'DELETE',
         // credentials: 'include', // This is necessary for including cookies in the request
         headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
           // ...any other headers that your server might require
         },

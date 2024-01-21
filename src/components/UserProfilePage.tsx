@@ -21,6 +21,9 @@ const UserProfilePage = ({username}: {username: string}) => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${username}/user_data`, {
                 // credentials: 'include', // to include the authentication cookie
+                headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                }
                 });
                 if (response.ok) {
                 const data = await response.json();

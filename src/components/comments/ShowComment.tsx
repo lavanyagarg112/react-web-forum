@@ -51,6 +51,9 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
             const fetchCurrentDisplayName = async () => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/current_user_data`, {
+                  headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                  }
                 // credentials: 'include', // to include the authentication cookie
                 });
                 if (response.ok) {

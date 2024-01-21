@@ -31,6 +31,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const checkLoggedIn = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/logged_in`, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          }
           // credentials: 'include',
         });
         const data = await response.json();

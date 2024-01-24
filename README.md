@@ -63,6 +63,13 @@ For any queries or collaborations, reach out to [Your Name] at [Your Email].
 ## User Manual
 
 ### Table of Contents
+1. [Introduction](#1-introduction)
+2. [Getting Started](#2-getting-started)
+3. [Account Management](#3-account-management)
+4. [Navigating the Interface](#4-navigating-the-interface)
+5. [Features Guide](#5-features-guide)
+6. [Troubleshooting](#6-troubleshooting)
+7. [FAQs](#7-faqs)
 
 
 ### 1. Introduction

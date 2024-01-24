@@ -44,8 +44,9 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 1. Clone the repository: `git clone https://github.com/lavanyagarg112/threadtalk.git`
 2. Install dependencies: `bundle install` and `npm install`
-3. Set up the database: `rails db:migrate`
-4. Start the server:  `cd react-web-forum`  then `rails s`
+3. Navigate to backend repository: `cd react-web-forum`
+4. Set up the database: `rails db:migrate`
+5. Start the server: `rails s`
 
 ## Usage
 

@@ -4,7 +4,7 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Features](#features)
-3. [[#Getting Started]]
+3. [Getting Started](#getting-started)
 4. [Usage](#usage)
 5. [Acknowledgements](#acknowledgements)
 6. [[#Contact Information]]

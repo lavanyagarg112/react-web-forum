@@ -7,8 +7,8 @@
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
 5. [Acknowledgements](#acknowledgements)
-6. [[#Contact Information]]
-7. [[#User Manual]]
+6. [Contact Information](#contact-information)
+7. [User Manual](#user-manual)
 
 ## Introduction
 
@@ -63,7 +63,7 @@ For any queries or collaborations, reach out to [Your Name] at [Your Email].
 ## User Manual
 
 ### Table of Contents
- [[#1. Introduction]]
+1. Introduction
 [[#2. Getting Started]]
 [[#3. Account Management]]
 [[#4. Navigating the Interface]]

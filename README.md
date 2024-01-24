@@ -63,21 +63,7 @@ For any queries or collaborations, reach out to [Your Name] at [Your Email].
 ## User Manual
 
 ### Table of Contents
-1. Introduction
-[[#2. Getting Started]]
-[[#3. Account Management]]
-[[#4. Navigating the Interface]]
-[[#5. Features Guide]]
-   - [[#Log in Requirement]]
-   - [[#Creating a Post]]
-   - [[#Commenting on Posts and Managing comments]]
-   - [[#Using Tags]]
-   - [[#Managing Favourites]]
-   - [[#Managing User Profile]]
-   - [[#Viewing Author Profile]]
-   - [[#Editing and Deleting Posts]]
-[[#6. Troubleshooting]]
-[[#7. FAQs]]
+
 
 ### 1. Introduction
 Welcome to the Web Forum Project, a dynamic platform for engaging discussions. This manual guides you through using all the features our forum offers.

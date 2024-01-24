@@ -1,5 +1,5 @@
 
-# Web Forum Project
+# Thread Talk - Web Forum Project
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -12,7 +12,7 @@
 
 ## Introduction
 
-Welcome to the repository for the Web Forum Project, a user-friendly, Rails-based application designed for engaging discussions. Our platform allows for dynamic interaction through posts, comments, and user profiles, enhancing the online discussion experience.
+Welcome to the repository for Thread Talk - a web forum project, a user-friendly, Rails-based application designed for engaging discussions. Our platform allows for dynamic interaction through posts, comments, and user profiles, enhancing the online discussion experience.
 
 ## Features
 

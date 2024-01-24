@@ -50,7 +50,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 ## Usage
 
-For a detailed guide on how to use the Web Forum Project, refer to the [[#User Manual]] section.
+For a detailed guide on how to use the Web Forum Project, refer to the [User Manual](#user-manual) section.
 
 ## Acknowledgements
 
@@ -66,7 +66,7 @@ For any queries or collaborations, reach out to [Your Name] at [Your Email].
 
 
 ### 1. Introduction
-Welcome to the Web Forum Project, a dynamic platform for engaging discussions. This manual guides you through using all the features our forum offers.
+Welcome to Thread Talk, a dynamic platform for engaging discussions. This manual guides you through using all the features our forum offers.
 
 ### 2. Getting Started
 ### System Requirements

@@ -6,9 +6,8 @@
 2. [Features](#features)
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
-5. [Acknowledgements](#acknowledgements)
-6. [Contact Information](#contact-information)
-7. [User Manual](#user-manual)
+5. [Contact Information](#contact-information)
+6. [User Manual](#user-manual)
 
 ## Introduction
 
@@ -52,13 +51,9 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 For a detailed guide on how to use the Web Forum Project, refer to the [User Manual](#user-manual) section.
 
-## Acknowledgements
-
-Special thanks to all contributors and those who have provided valuable feedback.
-
 ## Contact Information
 
-For any queries or collaborations, reach out to [Your Name] at [Your Email].
+For any queries or collaborations, reach out to me (Lavanya).
 
 ## User Manual
 

@@ -2,7 +2,7 @@
  * `NewPostForm` is a React component that provides a form to create a new post.
  *
  * This component allows users to enter a post title, description, and tags. It fetches user details and available tags,
- * posts the new post to the server through a POST request, and redirects to the homepage upon successful submission.
+ * posts the new post to the server through a POST request, and redirects to the posts page upon successful submission.
  *
  * Behavior:
  * - Displays a form with the following fields:
@@ -12,7 +12,7 @@
  * - Fetches the user's display name and available tags when the component mounts.
  * - Handles form submission by sending a POST request to create a new post on the server.
  * - Tags can be selected from the available tags or created as new tags.
- * - Upon successful submission, the user is redirected to the homepage.
+ * - Upon successful submission, the user is redirected to the posts page.
  * 
  * @returns {JSX.Element} A form for creating a new post with fields for title, description, and tags.
  */

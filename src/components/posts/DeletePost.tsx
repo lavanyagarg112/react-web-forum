@@ -9,7 +9,7 @@
  * Behavior:
  * - When the user clicks on the "Delete Post" link, it shows a confirmation dialog.
  * - If the user confirms the deletion, it sends a DELETE request to the server to delete the post.
- * - If the deletion is successful, it logs a success message and redirects the user to the homepage or the posts list.
+ * - If the deletion is successful, it logs a success message and redirects the user to the posts list.
  * - If the deletion fails, it logs an error message.
  *
  * Returns:
@@ -38,7 +38,7 @@ const DeletePost = ({id}: {id: number}) => {
 
             if (response.ok) {
             console.log('Post deleted successfully');
-            navigate('/allposts'); // Redirect to the homepage or the posts list
+            navigate('/allposts'); // Redirect to the posts list
             } else {
             console.error('Failed to delete the post');
             }

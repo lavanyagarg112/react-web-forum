@@ -1,39 +1,42 @@
 /* src/pages/LandingPage.css */
 
-/* Use a modern sans-serif font, you can choose any from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+  font-family: 'Montserrat', sans-serif;
+}
 
 .landingcontainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #f06, #f0f6); /* Stylish gradient background */
-  /* For an image background, comment out the above line and uncomment below */
-  /* background: url('path-to-your-background-image.jpg') center center/cover no-repeat; */
-  color: #fff; /* White text for better contrast */
+  color: white;
   text-align: center;
   padding: 20px;
+  background: none; /* Makes the container transparent */
 }
 
 .landingtitle {
-  font-family: 'Open Sans', sans-serif; /* Open Sans font */
-  font-weight: 700; /* Bold font weight for the title */
-  font-size: 4rem; /* Large font size */
-  margin-bottom: 0.5em;
-  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+  font-weight: 700;
+  font-size: 6rem; /* Larger font size for the title */
+  margin: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
-.landing-subtitle {
-  font-family: 'Open Sans', sans-serif; /* Open Sans font */
-  font-weight: 300; /* Lighter font weight for the subtitle */
-  font-size: 1.5rem; /* Smaller font size than the title */
-  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
-  animation-delay: 0.5s; /* Delayed animation for the subtitle */
+.landingsubtitle {
+  font-weight: 300; /* Lighter weight for a more elegant look */
+  font-size: 2rem; /* Larger font size for readability */
+  margin-top: 20px; /* Spacing between title and subtitle */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* Delays the fade in effect for subtitle */
 }
 
-/* Animation keyframes for fading in elements */
+/* Animation keyframes for fading in the elements */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -47,15 +50,20 @@
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
-  .landing-title {
-    font-size: 3rem; /* Slightly smaller font size on mobile */
+  .landingtitle {
+    font-size: 3.5rem; /* Slightly smaller font size on mobile */
   }
 
-  .landing-subtitle {
-    font-size: 1.2rem; /* Adjust subtitle font size for mobile */
+  .landingsubtitle {
+    font-size: 1.5rem; /* Adjust subtitle font size for mobile */
   }
-
-  /* Any additional mobile adjustments */
 }
 
-
+@media (max-width: 480px) {
+  .landingtitle {
+    font-size: 2.5rem;
+  }
+  .landingsubtitle {
+    font-size: 1.2rem;
+  }
+}

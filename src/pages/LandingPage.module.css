@@ -78,7 +78,7 @@
   font-size: 2.5rem; /* Large font size for the section title */
   margin-bottom: 1rem; /* Space below the section title */
   text-align: center; /* Center-align the title */
-  color: #ff758c; /* Color theme for the titles */
+  color: #77002e; /* Color theme for the titles */
 }
 
 .featuresguide ul {
@@ -93,7 +93,7 @@
 
 .featuresguide li:before {
   content: '•'; /* Adds a custom bullet point */
-  color: #ff758c; /* Color theme for the bullet points */
+  color: #77002e; /* Color theme for the bullet points */
   font-weight: bold; /* Makes the bullet point bold */
   display: inline-block; 
   width: 1rem; /* Width of the bullet area */

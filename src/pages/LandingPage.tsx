@@ -19,7 +19,7 @@ const LandingPage = () => {
           <p className={classes.landingsubtitle}>Dive into the world of discussion</p>
         </div>
         <div className={classes.featuresguide}>
-            <h2>Explore, engage, and express with ease.</h2>
+            <h2>Explore, Engage, and Express with ease.</h2>
             <ul>
                 <li>Discovering posts, comments, and author profiles at your leisure</li>
                 <li>Share Your Thoughts</li> 

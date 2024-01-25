@@ -17,7 +17,7 @@ For more details, do read on!
 2. [Features](#features)
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
-5. [Contact Information](#contact-information)
+5. [Resources](#resources)
 6. [User Manual](#user-manual)
 
 ## Introduction
@@ -35,6 +35,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 - **Favourites:** Bookmark and follow favourite posts.
 - **Responsive Design:** Mobile-friendly interface.
 - **Secure Tokens:** JWT tokens for authentication.
+- **Custom Favicons**
 
 ## Technology Stack
 
@@ -64,9 +65,16 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 For a detailed guide on how to use the Web Forum Project, refer to the [User Manual](#user-manual) section.
 
-## Contact Information
+## Resources
 
-For any queries or collaborations, reach out to me (Lavanya).
+Throughout this project, the following resources were quite helpful in teaching me the fundamentals needed for this project -
+
+- [The Odin Project](https://www.theodinproject.com/dashboard)
+- [React Documentation](https://react.dev/)
+- [Ruby on Rails Documentation](https://guides.rubyonrails.org/)
+- [Typescript Documentation](https://www.typescriptlang.org/)
+- [ChatGPT](https://chat.openai.com/) for references such as how to get started with deployment. I also used it to get an idea of what are the resources available to me to start learning the necessary technologies. However, ChatGPT was only used for reference and not for the actual coding.
+
 
 ## User Manual
 

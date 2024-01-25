@@ -3,7 +3,10 @@
 
 Hi everyone! This is my first full stack web development project using the following -
 - React with Typescript for the frontend
-- Ruby on Rails API for the backend
+- Ruby on Rails API with postgresql for the backend
+- Render for deployment
+
+To know more, do read on!
 
 ## Table of Contents
 1. [Introduction](#introduction)

@@ -59,3 +59,55 @@
     font-size: 1.2rem;
   }
 }
+
+
+/* Features Guide Section CSS */
+
+.featuresguide {
+  background-color: #fff; /* Light background for the content */
+  color: #333; /* Darker text for contrast */
+  max-width: 800px; /* Maximum width of the content */
+  margin: 2rem auto; /* Centers the section with a margin from the top and bottom */
+  padding: 2rem; /* Padding inside the section */
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: 'Open Sans', sans-serif; /* Consistent font family */
+}
+
+.featuresguide h2 {
+  font-size: 2.5rem; /* Large font size for the section title */
+  margin-bottom: 1rem; /* Space below the section title */
+  text-align: center; /* Center-align the title */
+  color: #ff758c; /* Color theme for the titles */
+}
+
+.featuresguide ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+}
+
+.featuresguide li {
+  margin-bottom: 1rem; /* Space between list items */
+  font-size: 1rem; /* Font size for list content */
+}
+
+.featuresguide li:before {
+  content: '•'; /* Adds a custom bullet point */
+  color: #ff758c; /* Color theme for the bullet points */
+  font-weight: bold; /* Makes the bullet point bold */
+  display: inline-block; 
+  width: 1rem; /* Width of the bullet area */
+  margin-left: -1rem; /* Positions the bullet correctly */
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+  .featuresguide {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .featuresguide h2 {
+    font-size: 2rem;
+  }
+}

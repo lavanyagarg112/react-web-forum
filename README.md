@@ -3,7 +3,7 @@
 
 Hi everyone! This is my first full stack web development project using the following -
 - React with Typescript for the frontend
-- Ruby on Rails API with postgresql for the backend
+- Ruby on Rails API with PostgreSQL for the backend
 - Render for deployment
 
 You can find the backend repository here: [threadtalk backend](https://github.com/lavanyagarg112/threadtalk-backend)
@@ -35,9 +35,9 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 ## Technology Stack
 
-- **Backend:** Ruby on Rails
 - **Frontend:** React with Typescript
-- **Database:** Postgresql
+- **Backend:** Ruby on Rails
+- **Database:** PostgreSQL
 - **Authentication:** Devise
 - **Deployment:** Render
 

@@ -103,7 +103,7 @@ Visit [ThreadTalk](https://threadtalk-t5y1.onrender.com/) and bookmark the page 
 #### Signing Up
 - Click on “Sign Up”.
 - Enter required details (username, email, password).
-- Password must be atleast 6 characters long
+- Password must be atleast 6 characters long.
 - Please remember your details, especially the email and the password, as you cannot retrieve it later.
 
 #### Logging In

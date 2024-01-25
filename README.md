@@ -107,7 +107,7 @@ Visit [ThreadTalk](https://threadtalk-t5y1.onrender.com/) and bookmark the page 
 - Enter your email and password.
 
 ### 4. Navigating the Interface
-Explore the main navigation bar for accessing posts, your profile, and settings. The home page displays the latest discussions.
+Explore the main navigation bar for accessing posts, your profile, and settings.
 
 ### 5. Features Guide
 

@@ -24,7 +24,6 @@ import { useAuth } from '../../store/auth-context';
 
 const MainNavigation = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
   const auth = useAuth();
   let message = "Sign Up";
   let link = "/signup";
@@ -34,24 +33,18 @@ const MainNavigation = () => {
     link = "/user-data";
   }
 
-  const toggleHamburger = () => {
-    setHamburgerIsOpen(prevState => !prevState);
-    console.log("hamburger is changed")
-  }
-
   const toggleMenuHandler = () => {
-    if (hamburgerIsOpen){
-      setMenuIsOpen(prevState => !prevState);
-      console.log("menu")
-    }
-    console.log("no menu")
-    
+    setMenuIsOpen(prevState => !prevState);
+  };
+
+  const notoggle = () => {
+    console.log("menu not open")
   };
 
   return (
-    <header className={`${classes.header} ${menuIsOpen && hamburgerIsOpen ? classes['menu-open'] : ''}`}>
-      <div className={classes.logo}><Link to="/" onClick={toggleMenuHandler}>Thread Talk</Link></div>
-      <div className={classes.hamburger} onClick={toggleHamburger}>
+    <header className={`${classes.header} ${menuIsOpen ? classes['menu-open'] : ''}`}>
+      <div className={classes.logo}><Link to="/" onClick={menuIsOpen ? toggleMenuHandler : notoggle}>Thread Talk</Link></div>
+      <div className={classes.hamburger} onClick={toggleMenuHandler}>
         <span></span>
         <span></span>
         <span></span>

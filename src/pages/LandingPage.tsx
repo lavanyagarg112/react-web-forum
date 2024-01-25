@@ -1,11 +1,12 @@
 
 import './LandingPage.css'; // Assuming you will create a separate CSS file for this page
+import classes from './LandingPage.module.css'
 
 const LandingPage = () => {
   return (
-    <div className="landing-container">
-      <h1 className="landing-title">Thread Talk</h1>
-      <p className="landing-subtitle">Dive into the world of discussion.</p>
+    <div className={classes.landingcontainer}>
+      <h1 className={classes.landingtitle}>Thread Talk</h1>
+      <p className={classes.landingsubtitle}>Dive into the world of discussion.</p>
     </div>
   );
 };

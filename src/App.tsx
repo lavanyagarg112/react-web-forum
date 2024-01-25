@@ -18,7 +18,8 @@ import UserDataPage from './pages/UserDataPage';
 import { AuthProvider } from './store/auth-context';
 import EditPost from './pages/EditPost';
 import UserProfile from './pages/UserProfile';
-import LandingPage from './pages/Landingpage';
+import LandingPage from './pages/LandingPage';
+
 
 /**
  * `App` is the root component of the application and serves as the entry point for rendering different pages.

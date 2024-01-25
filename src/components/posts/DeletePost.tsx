@@ -38,7 +38,7 @@ const DeletePost = ({id}: {id: number}) => {
 
             if (response.ok) {
             console.log('Post deleted successfully');
-            navigate('/'); // Redirect to the homepage or the posts list
+            navigate('/allposts'); // Redirect to the homepage or the posts list
             } else {
             console.error('Failed to delete the post');
             }

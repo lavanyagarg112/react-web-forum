@@ -3,6 +3,7 @@
  * It provides links to different sections of your web app based on user authentication status.
  *
  * Behavior:
+ * - Landing Page
  * - Displays a hamburger menu icon to toggle the mobile menu on smaller screens.
  * - When the mobile menu is open, it overlays the navigation links.
  * - Shows different navigation links based on the user's authentication status:
@@ -38,7 +39,7 @@ const MainNavigation = () => {
 
   return (
     <header className={`${classes.header} ${menuIsOpen ? classes['menu-open'] : ''}`}>
-      <div className={classes.logo}><Link to="/home">Thread Talk</Link></div>
+      <div className={classes.logo}><Link to="/">Thread Talk</Link></div>
       <div className={classes.hamburger} onClick={toggleMenuHandler}>
         <span></span>
         <span></span>
@@ -46,7 +47,7 @@ const MainNavigation = () => {
       </div>
       <nav>
         <ul>
-            <li><Link to="/" onClick={toggleMenuHandler}>All Posts</Link></li>
+            <li><Link to="/allposts" onClick={toggleMenuHandler}>All Posts</Link></li>
           <li><Link to="/newpost" onClick={toggleMenuHandler}>Add New Post</Link></li>
           <li><Link to="/favourites" onClick={toggleMenuHandler}>My Favourites</Link></li>
           <li><Link to="/Categories" onClick={toggleMenuHandler}>Categories</Link></li>

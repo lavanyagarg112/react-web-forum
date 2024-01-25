@@ -22,10 +22,8 @@ const LogoutButton = () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/users/sign_out`, {
         method: 'DELETE',
-        // credentials: 'include', // This is necessary for including cookies in the request
         headers: {
           'Content-Type': 'application/json',
-          // ...any other headers that your server might require
         },
       });
 
@@ -34,7 +32,7 @@ const LogoutButton = () => {
         localStorage.removeItem('token');
         setIsLoggedIn(false);
         setUser(null); // Clear user data
-        navigate('/login'); // Redirect to the login page
+        navigate('/'); // Redirect to the home page
       } else {
         console.error('Logout failed:', response);
       }

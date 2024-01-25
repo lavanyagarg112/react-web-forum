@@ -39,7 +39,7 @@ function App() {
           <Routes>
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
-              <Route path='/' element={<AllPosts />} />
+              <Route path='/allposts' element={<AllPosts />} />
               <Route path='/showpost/:id' element={<ShowPost />} />
               <Route path='/editpost/:id' element={<EditPost />} />
               <Route path='/newpost' element={<NewPost />} />
@@ -48,7 +48,7 @@ function App() {
               <Route path='/logout' element={<LogOut />} />
               <Route path="/user-data" element={<UserDataPage />} />
               <Route path='/user/:username' element={<UserProfile />} />
-              <Route path='/home' element={<LandingPage />} />
+              <Route path='/' element={<LandingPage />} />
           </Routes>
       </Layout>
     </AuthProvider>

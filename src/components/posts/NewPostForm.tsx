@@ -120,7 +120,7 @@ const NewPostForm = () => {
     
           const responseData = await response.json();
           console.log(responseData);
-          navigate("/");
+          navigate("/allposts");
         } catch (error) {
           console.error(error);
         }

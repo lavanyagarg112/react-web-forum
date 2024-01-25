@@ -20,7 +20,7 @@ For more details, do read on!
 
 ## Introduction
 
-Welcome to the repository for Thread Talk - a web forum project, a user-friendly, React with Rails-based application designed for engaging discussions. Our platform allows for dynamic interaction through posts, comments, and user profiles, enhancing the online discussion experience.
+Welcome to the repository for Thread Talk - a web forum project, a user-friendly, React with Rails-based application designed for engaging discussions. This platform allows for dynamic interaction through posts, comments, and user profiles, enhancing the online discussion experience.
 
 ## Features
 
@@ -86,7 +86,7 @@ For any queries or collaborations, reach out to me (Lavanya).
 
 
 ### 1. Introduction
-Welcome to Thread Talk, a dynamic platform for engaging discussions. This manual guides you through using all the features our forum offers.
+Welcome to Thread Talk, a dynamic platform for engaging discussions. This manual guides you through using all the features this forum offers.
 
 ### 2. Getting Started
 ### System Requirements

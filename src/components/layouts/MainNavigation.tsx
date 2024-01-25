@@ -38,7 +38,7 @@ const MainNavigation = () => {
 
   return (
     <header className={`${classes.header} ${menuIsOpen ? classes['menu-open'] : ''}`}>
-      <div className={classes.logo}><Link to="/">Thread Talk</Link></div>
+      <div className={classes.logo}><Link to="/home">Thread Talk</Link></div>
       <div className={classes.hamburger} onClick={toggleMenuHandler}>
         <span></span>
         <span></span>

@@ -18,6 +18,7 @@ import UserDataPage from './pages/UserDataPage';
 import { AuthProvider } from './store/auth-context';
 import EditPost from './pages/EditPost';
 import UserProfile from './pages/UserProfile';
+import LandingPage from './pages/Landingpage';
 
 /**
  * `App` is the root component of the application and serves as the entry point for rendering different pages.
@@ -46,6 +47,7 @@ function App() {
               <Route path='/logout' element={<LogOut />} />
               <Route path="/user-data" element={<UserDataPage />} />
               <Route path='/user/:username' element={<UserProfile />} />
+              <Route path='/home' element={<LandingPage />} />
           </Routes>
       </Layout>
     </AuthProvider>

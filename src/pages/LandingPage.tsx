@@ -1,5 +1,4 @@
 
-import './LandingPage.css'; // Assuming you will create a separate CSS file for this page
 import classes from './LandingPage.module.css'
 
 const LandingPage = () => {

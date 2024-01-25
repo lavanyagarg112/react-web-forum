@@ -103,6 +103,8 @@ Visit [ThreadTalk](https://threadtalk-t5y1.onrender.com/) and bookmark the page 
 #### Signing Up
 - Click on “Sign Up”.
 - Enter required details (username, email, password).
+- Password must be atleast 6 characters long
+- Please remember your details, especially the email and the password, as you cannot retrieve it later.
 
 #### Logging In
 - Click on “Log In” under the sign up page.
@@ -172,4 +174,3 @@ A: Yes, go to your post and select “Edit”.
 
 **Q: Can I view author profile?**
 A: Yes, click on the Author's name under the post to view the author profile.
-

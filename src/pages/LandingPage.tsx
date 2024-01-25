@@ -21,7 +21,7 @@ const LandingPage = () => {
         <div className={classes.featuresguide}>
             <h2>Explore, Engage, and Express with ease.</h2>
             <ul>
-                <li>Discovering posts, comments, and author profiles at your leisure</li>
+                <li>Discover posts, comments, and author profiles at your leisure</li>
                 <li>Share Your Thoughts</li> 
                 <li>Join the Conversation</li>
                 <li>Discover with Tags</li>

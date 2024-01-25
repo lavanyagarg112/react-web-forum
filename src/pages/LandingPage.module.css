@@ -110,4 +110,8 @@
   .featuresguide h2 {
     font-size: 2rem;
   }
+
+  .featuresguide li {
+    list-style: none;
+  }
 }

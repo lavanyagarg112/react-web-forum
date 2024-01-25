@@ -90,7 +90,7 @@ For any queries or collaborations, reach out to me (Lavanya).
 Welcome to Thread Talk, a dynamic platform for engaging discussions. This manual guides you through using all the features this forum offers.
 
 ### 2. Getting Started
-### System Requirements
+#### System Requirements
 - A modern web browser (Chrome, Firefox, Safari)
 - Internet connection
 

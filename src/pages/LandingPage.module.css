@@ -112,6 +112,6 @@
   }
 
   .featuresguide li:before {
-    content: '-';
+    content: none !important;
   }
 }

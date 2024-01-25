@@ -1,6 +1,15 @@
 
 # Thread Talk - Web Forum Project
 
+Hi everyone! This is my first full stack web development project using the following -
+- React with Typescript for the frontend
+- Ruby on Rails API with postgresql for the backend
+- Render for deployment
+
+You can find the backend repository here: [threadtalk backend](https://github.com/lavanyagarg112/threadtalk-backend)
+
+For more details, do read on!
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Features](#features)
@@ -11,7 +20,7 @@
 
 ## Introduction
 
-Welcome to the repository for Thread Talk - a web forum project, a user-friendly, Rails-based application designed for engaging discussions. Our platform allows for dynamic interaction through posts, comments, and user profiles, enhancing the online discussion experience.
+Welcome to the repository for Thread Talk - a web forum project, a user-friendly, React with Rails-based application designed for engaging discussions. Our platform allows for dynamic interaction through posts, comments, and user profiles, enhancing the online discussion experience.
 
 ## Features
 
@@ -28,7 +37,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 - **Backend:** Ruby on Rails
 - **Frontend:** React with Typescript
-- **Database:** SQLite3
+- **Database:** Postgresql
 - **Authentication:** Devise
 - **Deployment:** Render
 

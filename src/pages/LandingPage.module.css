@@ -87,18 +87,11 @@
 }
 
 .featuresguide li {
+  text-align: center;
   margin-bottom: 1rem; /* Space between list items */
   font-size: 1rem; /* Font size for list content */
 }
 
-.featuresguide li:before {
-  content: '•'; /* Adds a custom bullet point */
-  color: #77002e; /* Color theme for the bullet points */
-  font-weight: bold; /* Makes the bullet point bold */
-  display: inline-block; 
-  width: 1rem; /* Width of the bullet area */
-  margin-left: -1rem; /* Positions the bullet correctly */
-}
 
 /* Add responsive design for smaller screens */
 @media (max-width: 768px) {
@@ -111,7 +104,5 @@
     font-size: 2rem;
   }
 
-  .featuresguide li:before {
-    content: none !important;
-  }
+
 }

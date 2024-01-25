@@ -84,3 +84,17 @@
     padding: 1rem;
   }
 }
+
+/* Styling for the navigation brand/link */
+.logo {
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.logo:hover {
+  background-color: #555; /* Darken the brand/link on hover */
+}

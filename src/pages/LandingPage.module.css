@@ -1,23 +1,61 @@
 /* src/pages/LandingPage.css */
 
+/* Use a modern sans-serif font, you can choose any from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
 .landingcontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f8f8f8;
-    color: #333;
-    text-align: center;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f06, #f0f6); /* Stylish gradient background */
+  /* For an image background, comment out the above line and uncomment below */
+  /* background: url('path-to-your-background-image.jpg') center center/cover no-repeat; */
+  color: #fff; /* White text for better contrast */
+  text-align: center;
+  padding: 20px;
+}
+
+.landingtitle {
+  font-family: 'Open Sans', sans-serif; /* Open Sans font */
+  font-weight: 700; /* Bold font weight for the title */
+  font-size: 4rem; /* Large font size */
+  margin-bottom: 0.5em;
+  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+}
+
+.landing-subtitle {
+  font-family: 'Open Sans', sans-serif; /* Open Sans font */
+  font-weight: 300; /* Lighter font weight for the subtitle */
+  font-size: 1.5rem; /* Smaller font size than the title */
+  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+  animation-delay: 0.5s; /* Delayed animation for the subtitle */
+}
+
+/* Animation keyframes for fading in elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .landingtitle {
-    font-size: 4rem;
-    margin-bottom: 0.5em;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .landingsubtitle {
-    font-size: 1.5rem;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 3rem; /* Slightly smaller font size on mobile */
   }
-  
+
+  .landing-subtitle {
+    font-size: 1.2rem; /* Adjust subtitle font size for mobile */
+  }
+
+  /* Any additional mobile adjustments */
+}
+
+

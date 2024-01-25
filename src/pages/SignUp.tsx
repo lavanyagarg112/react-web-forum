@@ -42,7 +42,6 @@ const Signup: React.FC = () => {
   try {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
       method: 'POST',
-      // credentials: 'include',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',

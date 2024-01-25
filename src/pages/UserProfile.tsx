@@ -7,7 +7,7 @@
  * Behavior:
  * - Retrieves the `username` from the URL parameters using the `useParams` hook from `react-router-dom`.
  * - Uses the `UserProfilePage` component to display the user's profile information and posts.
- * - If the `username` is not provided or the user is not authenticated, it won't display any profile information.
+ * - If the `username` is not provided, it won't display any profile information.
  *
  * @returns {JSX.Element} The user profile page with user information and posts.
  */
@@ -21,8 +21,6 @@ import { useAuth } from '../store/auth-context'
 const UserProfile = () => {
 
     const {username} = useParams()
-    const {user} = useAuth()
-
 
 
   return (

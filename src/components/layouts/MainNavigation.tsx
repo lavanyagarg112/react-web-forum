@@ -36,12 +36,15 @@ const MainNavigation = () => {
 
   const toggleHamburger = () => {
     setHamburgerIsOpen(prevState => !prevState);
+    console.log("hamburger is changed")
   }
 
   const toggleMenuHandler = () => {
     if (hamburgerIsOpen){
       setMenuIsOpen(prevState => !prevState);
+      console.log("menu")
     }
+    console.log("no menu")
     
   };
 

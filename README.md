@@ -24,7 +24,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 ## Features
 
-- **Landing Page:** Landing Page to improve user experience
+- **Landing Page:** Landing Page to improve user experience, displaying application name, tagline and features
 - **User Authentication:** Secure sign-in with Devise.
 - **CRUD Operations:** Intuitive interfaces for creating, reading, updating, and deleting posts and comments.
 - **Nested Comments:** For richer user interactions.

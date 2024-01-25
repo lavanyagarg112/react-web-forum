@@ -111,7 +111,7 @@
     font-size: 2rem;
   }
 
-  .featuresguide ul {
-    list-style-type: none;
+  .featuresguide li:before {
+    content: none;
   }
 }

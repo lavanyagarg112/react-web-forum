@@ -1,3 +1,18 @@
+/**
+ * `Login` is a React component that provides a user login form.
+ *
+ * This component allows users to enter their email and password and submit the form to log in.
+ *
+ * Behavior:
+ * - Displays a form with fields for email and password.
+ * - Handles form submission by making a POST request to the server for user authentication.
+ * - Upon successful login, it sets the user as authenticated, stores the JWT token in local storage,
+ *   and redirects to the user's data page.
+ * - Displays an error message for login failures.
+ *
+ * @returns {JSX.Element} A login form.
+ */
+
 import React, { useState, FormEvent } from 'react';
 import classes from '../components/posts/NewPostForm.module.css'
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +21,6 @@ import Card from '../components/ui/Card';
 import { useAuth } from '../store/auth-context';
 
 const Login: React.FC = () => {
-  const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [loginError, setLoginError] = useState<string>('');
@@ -26,12 +40,10 @@ const Login: React.FC = () => {
         },
         body: JSON.stringify({
           user: {
-            // username,
             email,
             password,
           }
         }),
-        // credentials: 'include', // Required for cookies to be sent with the request
       });
 
       const data = await response.json();
@@ -40,9 +52,8 @@ const Login: React.FC = () => {
         localStorage.setItem('token', data.token);
         setIsLoggedIn(true);
         setUser(data.user);
-        navigate('/user-data'); // Navigate to the home page after login
+        navigate('/user-data');
       } else {
-        // Handle login failure
         setLoginError(data.error || 'Invalid credentials');
       }
     } catch (error) {
@@ -55,16 +66,6 @@ const Login: React.FC = () => {
         <h1>Login</h1>
         <Card>
             <form className={classes.form} onSubmit={handleSubmit}>
-              {/* <div className={classes.control}>
-                <label>Username</label>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Username"
-                    required
-                  />
-              </div> */}
               <div className={classes.control}>
                 <label>Email</label>
                   <input

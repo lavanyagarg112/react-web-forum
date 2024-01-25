@@ -1,13 +1,21 @@
-import React from 'react'
+/**
+ * `Favourites` is a React component that displays a user's favorite posts.
+ *
+ * This component fetches and displays a list of posts that the authenticated user has marked as favorites.
+ *
+ * Behavior:
+ * - Fetches the user's favorite posts when the component mounts.
+ * - Renders the list of favorite posts.
+ * - Displays a message prompting the user to log in if they are not authenticated.
+ * - Allows the user to view and interact with their favorite posts.
+ *
+ * @returns {JSX.Element} The Favourites component.
+ */
 
 import { useAuth } from '../store/auth-context'
-
 import { Link } from 'react-router-dom'
-
 import { useState, useEffect } from 'react'
-
 import PostItem from '../components/posts/PostItem'
-
 import { PostData } from '../store/PostType'
 
 const Favourites = () => {
@@ -23,10 +31,7 @@ const Favourites = () => {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
-          // Include any necessary headers like authentication tokens
         },
-        // Include credentials if your API requires authentication
-        // credentials: 'include',
       });
 
       if (!response.ok) {

@@ -1,6 +1,23 @@
-import React, { useRef, FormEvent, useState, useEffect } from 'react';
+/**
+ * `NewPostForm` is a React component that provides a form to create a new post.
+ *
+ * This component allows users to enter a post title, description, and tags. It fetches user details and available tags,
+ * posts the new post to the server through a POST request, and redirects to the homepage upon successful submission.
+ *
+ * Behavior:
+ * - Displays a form with the following fields:
+ *   - Post Title: A text input field for entering the post title.
+ *   - Description: A textarea for entering the post description.
+ *   - Add Tags: A creatable select input for selecting and creating tags for the post.
+ * - Fetches the user's display name and available tags when the component mounts.
+ * - Handles form submission by sending a POST request to create a new post on the server.
+ * - Tags can be selected from the available tags or created as new tags.
+ * - Upon successful submission, the user is redirected to the homepage.
+ * 
+ * @returns {JSX.Element} A form for creating a new post with fields for title, description, and tags.
+ */
+import { useRef, FormEvent, useState, useEffect } from 'react';
 import Card from '../ui/Card';
-import Select, { ActionMeta, OnChangeValue } from 'react-select';
 import classes from './NewPostForm.module.css';
 import { useAuth } from '../../store/auth-context';
 import { useNavigate } from 'react-router-dom';

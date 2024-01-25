@@ -1,3 +1,14 @@
+
+/**
+ * `Card` is a React component that represents a card-like container to wrap and style its children elements.
+ *
+ * Props:
+ * - `children` (ReactNode): The content or elements to be displayed inside the card.
+ *
+ * @param {ReactNode} children - The content or elements to be displayed inside the card.
+ * @returns {JSX.Element} A card container with styled children elements.
+ */
+
 import classes from './Card.module.css';
 import { ReactNode } from 'react';
 

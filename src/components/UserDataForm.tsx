@@ -1,18 +1,24 @@
-import React, { useState, FormEvent } from 'react';
+/**
+ * `UserDataForm` is a React component that allows users to manage their profile information.
+ *
+ *
+ * Behavior:
+ * - Fetches the current user's display name and bio when the component mounts.
+ * - Allows users to update their display name and bio through a form.
+ * - Makes an API request to update the user's profile data on submission.
+ * - Fetches the user's posts and displays them in a list.
+ * - Provides options to view the user's public profile and logout.
+ *
+ * @returns {JSX.Element} A component that enables users to manage their profile.
+ */
 
+import { useState, FormEvent } from 'react';
 import { useEffect } from 'react';
 import { useAuth } from '../store/auth-context';
-
 import classes from "./UserDataForm.module.css"
-
-import UserPosts from './posts/UserPosts';
-
 import LogoutButton from './LogoutButton';
-
 import PostItem from './posts/PostItem';
-
 import { PostData } from '../store/PostType';
-
 import { useNavigate } from 'react-router-dom';
 
 
@@ -92,7 +98,6 @@ const UserDataForm = () => {
 
         },
         body: JSON.stringify({ user_data: {authorname: trimmedAuthorName, bio: bio} }),
-        // credentials: 'include',
         });
 
         if (response.ok) {

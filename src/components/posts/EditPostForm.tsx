@@ -1,4 +1,20 @@
-import React, { useRef, FormEvent, useState, useEffect } from 'react';
+
+/**
+ * `EditPostForm` is a React component that provides a form for editing a post.
+ * It allows users to update the post title, description, and tags.
+ *
+ * Props:
+ * - None.
+ *
+ * Behavior:
+ * - Fetches the post data and available tags data to populate the form.
+ * - Handles form submission to update the post data on the server.
+ * - Redirects to the updated post after successful submission.
+ *
+ * @returns {JSX.Element} A component that renders a form for editing a post.
+ */
+
+import { useRef, FormEvent, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Card from '../ui/Card';
 import CreatableSelect from 'react-select/creatable';
@@ -9,6 +25,7 @@ type TagOption = {
   label: string;
   value: number;
 };
+
 
 const EditPostForm = () => {
   const { id } = useParams<{ id: string }>(); 
@@ -21,7 +38,6 @@ const EditPostForm = () => {
   const [availableTags, setAvailableTags] = useState<TagOption[]>([]);
   const [selectedTags, setSelectedTags] = useState<TagOption[]>([]);
 
-  // Refs for form fields (if needed)
   const titleInputRef = useRef<HTMLInputElement>(null);
   const descriptionInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -65,7 +81,7 @@ const EditPostForm = () => {
       user_id: user?.id, // Make sure user_id is allowed and handled on the backend
       tag_ids: existingTagIds,
       new_tags: newTags
-      // Add logic for new tags if needed
+
     };
 
     // Update the post

@@ -1,8 +1,20 @@
-import React from 'react'
+/**
+ * `UserPosts` is a React component that displays a list of posts created by a specific user.
+ *
+ * Props:
+ * - `username` (string): The username of the user for whom the posts will be displayed.
+ *
+ * Behavior:
+ * - Fetches the posts created by the specified user using an API request.
+ * - Displays a list of post items, each representing a post created by the user.
+ * - If there are no posts, it displays a message indicating that no posts have been created yet.
+ *
+ * @param {string} username - The username of the user for whom the posts will be displayed.
+ * @returns {JSX.Element} A list of post items created by the specified user or a message if no posts exist.
+ */
 
 import { useState, useEffect } from 'react';
 import PostItem from './PostItem';
-
 import { PostData } from '../../store/PostType';
 
 const UserPosts = ({username}: {username: string}) => {

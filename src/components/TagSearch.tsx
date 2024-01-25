@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+/**
+ * `TagSearch` is a React component that allows users to search for posts based on selected tags.
+ *
+ * Behavior:
+ * - Fetches available tags from the server.
+ * - Displays a multi-select input to choose tags for filtering posts.
+ * - Allows users to select multiple tags and trigger a search.
+ * - Sends a request to the server to retrieve posts that match the selected tags.
+ * - Displays the search results as a list of `PostItem` components.
+ * - Provides feedback when no posts match the selected tags.
+ *
+ * @returns {JSX.Element} A component that enables users to search for posts by selecting tags.
+ */
 
-import { Link } from 'react-router-dom';
 
+import{ useState } from 'react';
 import Select from 'react-select';
-
 import { useEffect } from 'react';
-
 import PostItem from './posts/PostItem';
-
 import classes from "./posts/NewPostForm.module.css"
-
 import { useLocation } from 'react-router-dom';
-
 import { PostData } from '../store/PostType';
   
   type TagOption = {
@@ -74,10 +81,10 @@ import { PostData } from '../store/PostType';
           setSearchResults(data.map((post: PostData) => ({
             id: post.id,
             title: post.title,
-            author_name: post.author_name, // Ensure this property is provided
-            description: post.description, // Ensure this property is provided
+            author_name: post.author_name,
+            description: post.description, 
             tags: post.tags,
-            username: post.username // Ensure this property is provided if applicable
+            username: post.username
           })));
           console.log(searchResults)
         
@@ -103,7 +110,7 @@ import { PostData } from '../store/PostType';
             <div className={classes.actions} ><button onClick={() => handleSearch(selectedTags)}>Search</button></div>
         </div>
         <div className={classes.searchresult}>
-          {searchResults && searchResults.map((post) => ( // Make sure searchResults is always an array
+          {searchResults && searchResults.map((post) => (
             <PostItem key={post.id} postinfo={post} />
               
           ))}

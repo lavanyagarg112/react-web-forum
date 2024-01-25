@@ -1,22 +1,33 @@
+/**
+ * `ShowPost` is a React component that displays a single post and its associated comments.
+ *
+ * This component fetches the details of a specific post by its ID and displays its title, author,
+ * tags, description, and comments. It also provides the option to edit or delete the post if the
+ * currently logged-in user is the author of the post. Users can also favorite the post and add
+ * comments to it.
+ *
+ * Behavior:
+ * - Fetches the details of a specific post by its ID.
+ * - Fetches the comments associated with the post.
+ * - Displays the post's title, author, tags, description, and comments.
+ * - Allows the author to edit or delete the post.
+ * - Allows users to favorite the post.
+ * - Allows users to add comments to the post.
+ *
+ * @returns {JSX.Element} A page displaying a single post and its comments.
+ */
+
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-
 import classes from "./ShowPost.module.css"
-
 import { useAuth } from '../store/auth-context';
-
 import DeletePost from '../components/posts/DeletePost';
 import { Link } from 'react-router-dom';
-
 import ShowComment from '../components/comments/ShowComment';
-
 import { CommentType } from '../components/comments/ShowComment';
-
 import CommentForm from '../components/comments/CommentForm';
-
 import FavoriteButton from '../components/posts/FavoriteButton';
-
-import { TagType, PostData } from '../store/PostType';
+import {PostData } from '../store/PostType';
 
 
 
@@ -85,11 +96,10 @@ const ShowPost: React.FC = () => {
               headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
               }
-            // credentials: 'include', // to include the authentication cookie
             });
             if (response.ok) {
             const data = await response.json();
-            setAuthorname(data.authorname); // Assuming the attribute is named 'authorname'
+            setAuthorname(data.authorname);
             }
         } catch (error) {
             console.error('Failed to fetch current display name:', error);

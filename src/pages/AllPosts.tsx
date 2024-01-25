@@ -1,4 +1,13 @@
-import React, { useState, useEffect } from 'react';
+/**
+ * `AllPosts` is a React component that displays a list of all posts.
+ *
+ * Behavior:
+ * - Fetches and displays a list of all posts from the server.
+ *
+ * @returns {JSX.Element} A component that lists all posts.
+ */
+
+import { useState, useEffect } from 'react';
 import PostList from '../components/posts/PostList';
 
 const AllPosts = () => {
@@ -16,7 +25,6 @@ const AllPosts = () => {
                 setPosts(data);
             } catch (error) {
                 console.error(error);
-                // Handle error here, e.g., set error state
             }
         };
 

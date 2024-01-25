@@ -19,6 +19,17 @@ import { AuthProvider } from './store/auth-context';
 import EditPost from './pages/EditPost';
 import UserProfile from './pages/UserProfile';
 
+/**
+ * `App` is the root component of the application and serves as the entry point for rendering different pages.
+ *
+ * Behavior:
+ * - Configures routing using `react-router-dom`.
+ * - Provides authentication context using the `AuthProvider`.
+ * - Contains routes for various pages, including login, signup, all posts, show post, edit post, new post, categories, favorites, logout, user data, and user profile.
+ *
+ * @returns {JSX.Element} The root component of the application.
+ */
+
 function App() {
   return (
     <AuthProvider>

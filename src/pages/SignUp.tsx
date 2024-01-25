@@ -1,8 +1,23 @@
+/**
+ * `Signup` is a React component that provides a user registration form.
+ *
+ * This component allows users to sign up by providing a username, email, password, and confirming
+ * the password. It also handles form submission, validates user input, and displays any signup
+ * errors.
+ *
+ * Behavior:
+ * - Handles user registration by sending a POST request to the server.
+ * - Validates user input, ensuring that passwords match.
+ * - Displays any signup errors returned by the server.
+ * - Redirects the user to the login page upon successful registration.
+ *
+ * @returns {JSX.Element} A registration form for new users.
+ */
+
 import React, { useState, FormEvent } from 'react';
 import classes from '../components/posts/NewPostForm.module.css'
 import signupclasses from "./SignUpPage.module.css"
 import { useNavigate } from 'react-router-dom';
-
 import Card from '../components/ui/Card';
 import { Link } from 'react-router-dom';
 
@@ -51,7 +66,7 @@ const Signup: React.FC = () => {
 
     const data = await response.json();
     localStorage.setItem('token', data.token);
-    navigate('/user-data'); 
+    navigate('/login'); 
 
   } catch (error) {
     if (error instanceof Error) {

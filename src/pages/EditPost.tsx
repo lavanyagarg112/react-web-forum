@@ -1,11 +1,22 @@
-import React from 'react'
-import EditPostForm from '../components/posts/EditPostForm'
+/**
+ * `EditPost` is a React component responsible for rendering an edit post page.
+ *
+ * This component checks if the user is logged in and if they are the author of the post
+ * before allowing them to edit the post.
+ *
+ * Behavior:
+ * - Fetches the current user's display name when the component mounts if the user is logged in.
+ * - Fetches the post data based on the post ID from the route parameter.
+ * - Conditionally renders an edit form if the user is logged in and is the author of the post.
+ * - Displays appropriate messages if the user is not logged in or is not the author of the post.
+ *
+ * @returns {JSX.Element} The EditPost component.
+ */
 
+import EditPostForm from '../components/posts/EditPostForm'
 import { useAuth } from '../store/auth-context';
 import { useEffect, useState } from 'react';
-
 import { useParams } from 'react-router-dom';
-
 import { Link } from 'react-router-dom';
 
 type TagType = {
@@ -39,11 +50,10 @@ const EditPost = () => {
                   headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                   }
-                // credentials: 'include', // to include the authentication cookie
                 });
                 if (response.ok) {
                 const data = await response.json();
-                setAuthorname(data.authorname); // Assuming the attribute is named 'authorname'
+                setAuthorname(data.authorname);
                 }
             } catch (error) {
                 console.error('Failed to fetch current display name:', error);

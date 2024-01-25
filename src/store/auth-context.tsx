@@ -1,6 +1,7 @@
-// src/context/AuthContext.tsx
+
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 
+// Define the type for the authentication context
 interface AuthContextType {
   isLoggedIn: boolean;
   setIsLoggedIn: (isLoggedIn: boolean) => void; // Add this line
@@ -9,8 +10,10 @@ interface AuthContextType {
 
 }
 
+// Create the authentication context
 const AuthContext = createContext<AuthContextType | null>(null);
 
+// Custom hook for accessing the authentication context
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
@@ -19,14 +22,17 @@ export const useAuth = () => {
     return context;
   };
 
+// Define props for AuthProvider component
 interface AuthProviderProps {
   children: ReactNode;
 }
 
+// AuthProvider component that manages authentication state
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<{ id: number; email: string; username: string } | null>(null);
 
+  // Check user's login status on component mount
   useEffect(() => {
     const checkLoggedIn = async () => {
       try {
@@ -34,7 +40,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
           }
-          // credentials: 'include',
         });
         const data = await response.json();
         setIsLoggedIn(data.logged_in);
@@ -52,6 +57,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     checkLoggedIn();
   }, []);
 
+  // Create the context value
   const value = { isLoggedIn, setIsLoggedIn, user, setUser };
   console.log(isLoggedIn)
   return (

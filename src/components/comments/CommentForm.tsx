@@ -1,20 +1,34 @@
+/**
+ * `CommentForm` is a React component that provides a form to add comments to a post.
+ *
+ * This component allows users to enter and submit comments. It also fetches user details and posts comments
+ * to the server through a POST request.
+ *
+ * Props:
+ * - `id` (number): The unique identifier of the post to which the comment will be added (post ID).
+ * - `onCommentPosted` (function): A callback function triggered after successfully posting a comment to refresh the comments.
+ *
+ * Behavior:
+ * - Displays a button with text "Add Comment" (or "Cancel Comment" when the form is open).
+ * - When the button is clicked, it toggles the comment form.
+ * - The form includes a textarea for entering the comment content.
+ * - After submitting the form, a POST request is sent to the server to add the comment.
+ * - Upon successful submission, the form is cleared, and the `onCommentPosted` callback is called to refresh the comments.
+ *
+ * @param {number} id - The post ID to which the comment will be added.
+ * @param {function} onCommentPosted - A callback function to refresh comments after posting a comment.
+ * @returns {JSX.Element} A comment form with a textarea to add comments to the specified post.
+ */
+
 import { useState, FormEvent } from 'react'
-
 import { useAuth } from '../../store/auth-context';
-
-import { useNavigate } from 'react-router-dom';
-
 import { useEffect } from 'react';
-
 import classes from "./ShowComment.module.css"
-
-import React from 'react'
 
 const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () => void}) => {
     const [replyContent, setReplyContent] = useState('');
     console.log(id)
     const {user} = useAuth()
-    const navigate = useNavigate();
 
     const [authorname, setAuthorname] = useState('');
     const { isLoggedIn, setIsLoggedIn} = useAuth();
@@ -41,11 +55,10 @@ const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () =>
                   headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                   }
-                // credentials: 'include', // to include the authentication cookie
                 });
                 if (response.ok) {
                 const data = await response.json();
-                setAuthorname(data.authorname); // Assuming the attribute is named 'authorname'
+                setAuthorname(data.authorname);
                 }
             } catch (error) {
                 console.error('Failed to fetch current display name:', error);
@@ -65,7 +78,6 @@ const CommentForm = ({id, onCommentPosted} : {id: number, onCommentPosted: () =>
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              // Add authentication headers if needed
             },
             body: JSON.stringify({comment: { content: replyContent, user_id: user?.id, author_name: authorname, username: user?.username }})
           });

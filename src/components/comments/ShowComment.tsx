@@ -1,18 +1,35 @@
-import React from 'react'
+
+
+/**
+ * `ShowComment` is a React component that displays a comment, including its author, content, and replies.
+ *
+ * This component supports nested comments (replies) and provides a form to add replies to the comment.
+ *
+ * Props:
+ * - `comment` (CommentType): The comment to be displayed, including author information, content, and replies.
+ * - `onReplyPosted` (function): A callback function triggered when a reply is posted to refresh the comments.
+ *
+ * Behavior:
+ * - Displays the author's name, content, and a "Reply" button.
+ * - Allows the user to reply to the comment by clicking the "Reply" button, which shows a reply form.
+ * - Supports nested comments (replies) by recursively rendering child comments.
+ * - Provides the ability to delete the comment if the user is the author.
+ *
+ * @param {object} comment - The comment object to be displayed.
+ * @param {function} onReplyPosted - A callback function to refresh comments when a reply is posted.
+ * @returns {JSX.Element} The comment, its replies, and a reply form when applicable.
+ */
+
+
 import classes from "./ShowComment.module.css"
-
 import { useState, FormEvent } from 'react'
-
 import { useAuth } from '../../store/auth-context'
-
 import { Link } from 'react-router-dom'
-
-import { useNavigate } from 'react-router-dom'
-
 import { useEffect } from 'react'
-
 import DeleteComment from './DeleteComment'
 
+
+// export the CommentType so that if needed, can be used later without redefining the type
 export type CommentType = {
     id: number,
     author_name: string,
@@ -54,11 +71,10 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
                   headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                   }
-                // credentials: 'include', // to include the authentication cookie
                 });
                 if (response.ok) {
                 const data = await response.json();
-                setAuthorname(data.authorname); // Assuming the attribute is named 'authorname'
+                setAuthorname(data.authorname);
                 }
             } catch (error) {
                 console.error('Failed to fetch current display name:', error);
@@ -79,7 +95,6 @@ const ShowComment = ({ comment, onReplyPosted } : CommentProps) => {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              // Add authentication headers if needed
             },
             body: JSON.stringify({comment: { content: replyContent, parent_id: comment.id, user_id: user?.id, author_name: authorname, username: user?.username }})
           });

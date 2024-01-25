@@ -32,7 +32,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 - **Backend:** Ruby on Rails
 - **Frontend:** React with Typescript
-- **Database:** SQLite3
+- **Database:** Postgresql
 - **Authentication:** Devise
 - **Deployment:** Render
 

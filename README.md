@@ -29,7 +29,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 - **CRUD Operations:** Intuitive interfaces for creating, reading, updating, and deleting posts and comments.
 - **Nested Comments:** For richer user interactions.
 - **User Profiles:** Display name management and user-specific post viewing.
-- **Tags:** Personalise and categorise posts with reusable tags.
+- **Tags:** Personalise and categorise posts with reusable tags. Further, search posts through tags.
 - **Favourites:** Bookmark and follow favourite posts.
 - **Responsive Design:** Mobile-friendly interface.
 - **Secure Tokens:** JWT tokens for authentication.

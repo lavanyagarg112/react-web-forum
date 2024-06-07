@@ -8,6 +8,8 @@ Hi everyone! This is my first full stack web development project using the follo
 
 You can find the deployed application here: [ThreadTalk](https://threadtalk-t5y1.onrender.com/)
 
+Update: the deployed application is currently down.
+
 You can find the backend repository here: [threadtalk backend](https://github.com/lavanyagarg112/threadtalk-backend)
 
 For more details, do read on!

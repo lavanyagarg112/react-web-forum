@@ -65,10 +65,11 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 8. Fetch main: `git fetch origin main`
 9. Checkout to main: `git checkout main`
 10. Install dependencies: `bundle install`
-11. Set up the database: `rails db:migrate`
-12. Start the server: `rails s`
-13. Navigate back to frontend repository: `cd ..`
-14. Run the react application: `npm start`
+11. Set the appropriate env variables (database name etc)
+12. Set up the database: `rails db:migrate`
+13. Start the server: `rails s`
+14. Navigate back to frontend repository: `cd ..`
+15. Run the react application: `npm start`
 
 ## Usage
 

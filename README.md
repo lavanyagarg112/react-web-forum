@@ -3,7 +3,7 @@
 
 Hi everyone! This is my first full stack web development project using the following -
 - React with Typescript for the frontend
-- Ruby on Rails API with PostgreSQL for the backend
+- Ruby on Rails API using PostgreSQL for the backend
 - Render for deployment
 
 You can find the deployed application here: [ThreadTalk](https://threadtalk-t5y1.onrender.com/)

@@ -8,8 +8,6 @@ Hi everyone! This is my first full stack web development project using the follo
 
 You can find the deployed application here: [ThreadTalk](https://threadtalk-t5y1.onrender.com/)
 
-Update: the deployed application is currently down.
-
 You can find the backend repository here: [threadtalk backend](https://github.com/lavanyagarg112/threadtalk-backend)
 
 For more details, do read on!
@@ -57,11 +55,21 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/lavanyagarg112/threadtalk.git`
-2. Install dependencies: `bundle install` and `npm install`
-3. Navigate to backend repository: `cd react-web-forum`
-4. Set up the database: `rails db:migrate`
-5. Start the server: `rails s`
+1. Fork this repository and the backend repository
+2. Clone the forked frontend repository to run it on your system
+3. Navigate to the frontend repository: `cd threadtalk`
+4. Install dependencies: `npm install`
+5. Navigate to backend repository: `cd react-web-forum`
+6. Initialise a new repository: `git init`
+7. Add remote repository: `git remote add origin <the url to the repo to clone forked repo>`
+8. Fetch main: `git fetch origin main`
+9. Checkout to main: `git checkout main`
+10. Install dependencies: `bundle install`
+11. Set the appropriate env variables (database name etc)
+12. Set up the database: `rails db:migrate`
+13. Start the server: `rails s`
+14. Navigate back to frontend repository: `cd ..`
+15. Run the react application: `npm start`
 
 ## Usage
 

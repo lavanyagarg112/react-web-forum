@@ -41,7 +41,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 - **Frontend:** React with Typescript
 - **Backend:** Ruby on Rails
-- **Database:** PostgreSQL
+- **Database:** PostgreSQL hosted on Supabase
 - **Authentication:** Devise
 - **Deployment:** Render
 

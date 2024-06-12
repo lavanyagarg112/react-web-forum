@@ -17,7 +17,7 @@ For more details, do read on!
 2. [Features](#features)
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
-5. [Contact Information](#contact-information)
+5. [Resources](#resources)
 6. [User Manual](#user-manual)
 
 ## Introduction
@@ -35,6 +35,7 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 - **Favourites:** Bookmark and follow favourite posts.
 - **Responsive Design:** Mobile-friendly interface.
 - **Secure Tokens:** JWT tokens for authentication.
+- **Custom Favicons**
 
 ## Technology Stack
 
@@ -54,19 +55,36 @@ Welcome to the repository for Thread Talk - a web forum project, a user-friendly
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/lavanyagarg112/threadtalk.git`
-2. Install dependencies: `bundle install` and `npm install`
-3. Navigate to backend repository: `cd react-web-forum`
-4. Set up the database: `rails db:migrate`
-5. Start the server: `rails s`
+1. Fork this repository and the backend repository
+2. Clone the forked frontend repository to run it on your system
+3. Navigate to the frontend repository: `cd threadtalk`
+4. Install dependencies: `npm install`
+5. Navigate to backend repository: `cd react-web-forum`
+6. Initialise a new repository: `git init`
+7. Add remote repository: `git remote add origin <the url to the repo to clone forked repo>`
+8. Fetch main: `git fetch origin main`
+9. Checkout to main: `git checkout main`
+10. Install dependencies: `bundle install`
+11. Set the appropriate env variables (database name etc)
+12. Set up the database: `rails db:migrate`
+13. Start the server: `rails s`
+14. Navigate back to frontend repository: `cd ..`
+15. Run the react application: `npm start`
 
 ## Usage
 
 For a detailed guide on how to use the Web Forum Project, refer to the [User Manual](#user-manual) section.
 
-## Contact Information
+## Resources
 
-For any queries or collaborations, reach out to me (Lavanya).
+Throughout this project, the following resources were quite helpful in teaching me the fundamentals needed for this project -
+
+- [The Odin Project](https://www.theodinproject.com/dashboard)
+- [React Documentation](https://react.dev/)
+- [Ruby on Rails Documentation](https://guides.rubyonrails.org/)
+- [Typescript Documentation](https://www.typescriptlang.org/)
+- [ChatGPT](https://chat.openai.com/) for references such as how to get started with deployment. I also used it to get an idea of what are the resources available to me to start learning the necessary technologies. However, ChatGPT was only used for reference and not for the actual coding.
+
 
 ## User Manual
 

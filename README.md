@@ -1,6 +1,8 @@
 
 # Thread Talk - Web Forum Project
 
+Note: the website is currently down.
+
 Hi everyone! This is my first full stack web development project using the following -
 - React with Typescript for the frontend
 - Ruby on Rails API using PostgreSQL for the backend

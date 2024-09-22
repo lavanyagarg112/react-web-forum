@@ -10,6 +10,8 @@ You can find the deployed application here: [ThreadTalk](https://threadtalk-t5y1
 
 (Note: The backend might take some time to load due to server inactivity)
 
+(Edit: Due to the free version of the db and the deployment service, the website may not work as intended)
+
 You can find the backend repository here: [threadtalk backend](https://github.com/lavanyagarg112/threadtalk-backend)
 
 For more details, do read on!
